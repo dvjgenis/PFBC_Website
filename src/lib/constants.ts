@@ -17,7 +17,7 @@ export const CHURCH = {
   googleReviewUrl:
     'https://www.google.com/search?q=Pillar+of+Faith+Baptist+Church+Naperville&lrd=0x880ef63f6fb5dd3d:0x609e33900e8455fc,3,,,&hl=en-US',
   phone: '(630) 904-4900',
-  email: 'info@fabcchicago.org',
+  email: 'info@pfbcnaperville.org',
   navWordmark: 'Pillar of Faith',
   facebook: 'https://www.facebook.com/pillaroffaithbc',
   facebookLabel: 'Pillar of Faith Baptist Church',
