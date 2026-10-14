@@ -1,28 +1,32 @@
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { CHURCH, NAV_LINKS } from '../lib/constants'
+import { gatheringStatusLabel, isGatheringOpen } from '../lib/gatheringHours'
 import { getLenis, scrollTo, scrollToHash } from '../lib/lenis'
 import './Nav.css'
 
 export function Nav() {
   const [open, setOpen] = useState(false)
   const [time, setTime] = useState('')
+  const [gatheringOpen, setGatheringOpen] = useState(() => isGatheringOpen())
   const navigate = useNavigate()
   const location = useLocation()
 
   useEffect(() => {
     const update = () => {
+      const now = new Date()
       setTime(
         new Intl.DateTimeFormat('en-US', {
           timeZone: CHURCH.timezone,
           hour: '2-digit',
           minute: '2-digit',
           hour12: false,
-        }).format(new Date()),
+        }).format(now),
       )
+      setGatheringOpen(isGatheringOpen(now))
     }
     update()
-    const id = setInterval(update, 60000)
+    const id = setInterval(update, 30000)
     return () => clearInterval(id)
   }, [])
 
@@ -81,7 +85,16 @@ export function Nav() {
           {CHURCH.navWordmark}
         </button>
         <div className="nav-meta">
-          <span className="nav-clock">{CHURCH.city} {time}</span>
+          <span className="nav-clock">
+            <span
+              className={`nav-gathering-dot${gatheringOpen ? ' is-open' : ''}`}
+              aria-hidden="true"
+            />
+            <span className="nav-clock-text">
+              {CHURCH.city} {time}
+            </span>
+            <span className="visually-hidden">{gatheringStatusLabel(gatheringOpen)}</span>
+          </span>
           <button
             type="button"
             className="nav-menu-btn"

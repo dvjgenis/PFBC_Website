@@ -29,7 +29,7 @@ export const CHURCH = {
   timezone: 'America/Chicago',
   city: 'Naperville',
   locationLabel: 'Naperville, IL',
-  heroMeta: 'Sunday worship 3:30 · Thursday Bible study & prayer 7:00 · Naperville, IL',
+  heroMeta: 'Sunday worship 3:00 – 6:00 PM · Naperville, IL',
 } as const
 
 export const NAV_LINKS = [
@@ -42,9 +42,7 @@ export const NAV_LINKS = [
 ] as const
 
 export const VISIT_SCHEDULE = [
-  { label: 'Sunday', title: 'Worship Service', time: '3:30 PM', livestream: true },
-  { label: 'Thursday', title: 'Bible Studies', time: '7:00 PM' },
-  { label: 'Thursday', title: 'Prayer Meeting', time: '7:00 PM' },
+  { label: 'Sunday', title: 'Worship & Fellowship', time: '3:00 – 6:00 PM', livestream: true },
 ] as const
 
 export const SCHEDULE = [
