@@ -13,7 +13,7 @@ export const CHURCH = {
   address: '2012 Wicklow Rd, Naperville, IL 60564',
   mapsUrl: 'https://maps.app.goo.gl/tZzhF5TEBcgKtSuF8',
   phone: '(630) 904-4900',
-  email: 'pillaroffaithbc@gmail.com',
+  email: 'info@fabcchicago.org',
   navWordmark: 'Pillar of Faith',
   facebook: 'https://www.facebook.com/pillaroffaithbc',
   facebookLabel: 'Pillar of Faith Baptist Church',

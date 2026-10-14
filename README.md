@@ -39,7 +39,7 @@ This is a Vite + React SPA. Vercel should detect **Vite** automatically.
 
 `vercel.json` rewrites unknown paths to `index.html` so `/faith` and `/contact` work on refresh.
 
-After the first contact-form submit, open `pillaroffaithbc@gmail.com` and click FormSubmit’s **Activate Form** link so messages keep arriving there.
+After the first contact-form submit, open `info@fabcchicago.org` and click FormSubmit’s **Activate Form** link so messages keep arriving there.
 
 ## Stack
 
