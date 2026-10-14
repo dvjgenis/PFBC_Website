@@ -50,6 +50,11 @@ export function Footer() {
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} {CHURCH.name}. All rights reserved.</span>
+          <p className="review-nudge footer-review-nudge">
+            <a href={CHURCH.googleReviewUrl} target="_blank" rel="noopener noreferrer">
+              Leave a Google review
+            </a>
+          </p>
           <span>{CHURCH.locationLabel}</span>
         </div>
       </div>

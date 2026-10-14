@@ -11,7 +11,11 @@ export const CHURCH = {
   tagline:
     'We are a warm, welcoming community of believers dedicated to sharing God\'s love, growing in faith together, and serving our community.',
   address: '2012 Wicklow Rd, Naperville, IL 60564',
-  mapsUrl: 'https://maps.app.goo.gl/tZzhF5TEBcgKtSuF8',
+  mapsUrl:
+    'https://www.google.com/maps/place/Pillar+of+Faith+Baptist+Church/@41.6897268,-88.1895103,17z/data=!4m8!3m7!1s0x880ef63f6fb5dd3d:0x609e33900e8455fc!8m2!3d41.6897228!4d-88.1869354!9m1!1b1!16s%2Fg%2F1tg2l7q8?entry=ttu',
+  /** Opens Google’s write-a-review prompt for this Maps listing. */
+  googleReviewUrl:
+    'https://www.google.com/search?q=Pillar+of+Faith+Baptist+Church+Naperville&lrd=0x880ef63f6fb5dd3d:0x609e33900e8455fc,3,,,&hl=en-US',
   phone: '(630) 904-4900',
   email: 'info@fabcchicago.org',
   navWordmark: 'Pillar of Faith',

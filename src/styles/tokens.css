@@ -129,6 +129,23 @@ textarea {
   max-width: 62ch;
 }
 
+.review-nudge {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  opacity: 0.62;
+}
+
+.review-nudge a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 32%, transparent);
+  text-underline-offset: 0.2em;
+}
+
+.review-nudge a:hover {
+  opacity: 1;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

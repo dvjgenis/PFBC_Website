@@ -162,3 +162,17 @@
   height: 0;
   overflow: hidden;
 }
+
+.contact-review-nudge {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  max-width: 62ch;
+}
+
+.contact-review-nudge-bottom {
+  margin-top: 2.5rem;
+  text-align: center;
+  max-width: none;
+}

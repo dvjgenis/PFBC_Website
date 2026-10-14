@@ -63,6 +63,13 @@ export function Contact() {
           Have questions or want to learn more? Write us and it goes to{' '}
           <a href={`mailto:${CHURCH.email}`}>{CHURCH.email}</a>.
         </p>
+        <p className="review-nudge">
+          Visited us on a Sunday?{' '}
+          <a href={CHURCH.googleReviewUrl} target="_blank" rel="noopener noreferrer">
+            Leave a Google review
+          </a>
+          — it helps others discover our church.
+        </p>
 
         <div className="contact-grid">
           <form className="contact-form" onSubmit={handleSubmit}>
