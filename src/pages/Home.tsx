@@ -4,6 +4,7 @@ import { Visit } from '../sections/Visit'
 import { About } from '../sections/About'
 import { FaithTeaser } from '../sections/FaithTeaser'
 import { Life } from '../sections/Life'
+import { GiveTeaser } from '../sections/Give'
 import { Bible } from '../sections/Bible'
 import { PrayerWall } from '../sections/PrayerWall'
 
@@ -12,6 +13,7 @@ export function Home() {
     <>
       <Hero />
       <Visit />
+      <GiveTeaser />
       <About />
       <Marquee />
       <FaithTeaser />

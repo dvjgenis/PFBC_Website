@@ -18,6 +18,7 @@ export const CHURCH = {
     'https://www.google.com/search?q=Pillar+of+Faith+Baptist+Church+Naperville&lrd=0x880ef63f6fb5dd3d:0x609e33900e8455fc,3,,,&hl=en-US',
   phone: '(630) 904-4900',
   email: 'info@pfbcnaperville.org',
+  zelle: 'pillaroffaithbc@gmail.com',
   navWordmark: 'Pillar of Faith',
   facebook: 'https://www.facebook.com/pillaroffaithbc',
   facebookLabel: 'Pillar of Faith Baptist Church',
@@ -33,7 +34,7 @@ export const CHURCH = {
   timezone: 'America/Chicago',
   city: 'Naperville',
   locationLabel: 'Naperville, IL',
-  heroMeta: 'Sunday worship 3:00 – 6:00 PM · Naperville, IL',
+  heroMeta: 'Sunday worship 3:30 – 5:00 PM · 1st–3rd Thursday 7:00 PM · Naperville, IL',
 } as const
 
 export const NAV_LINKS = [
@@ -43,10 +44,14 @@ export const NAV_LINKS = [
   { label: 'Word', to: '/', hash: '#word' },
   { label: 'Prayer Wall', to: '/', hash: '#pray' },
   { label: 'Contact', to: '/contact' },
+  { label: 'Give', to: '/give' },
 ] as const
 
 export const VISIT_SCHEDULE = [
-  { label: 'Sunday', title: 'Worship & Fellowship', time: '3:00 – 6:00 PM', livestream: true },
+  { label: 'Sunday', title: 'Worship Service', time: '3:30 – 5:00 PM', livestream: true },
+  { label: '1st Thursday', title: 'Bible Study', time: '7:00 PM · In person at the church' },
+  { label: '2nd Thursday', title: 'Bible Study', time: '7:00 PM · Zoom' },
+  { label: '3rd Thursday', title: 'Prayer Meeting', time: '7:00 PM' },
 ] as const
 
 export const SCHEDULE = [

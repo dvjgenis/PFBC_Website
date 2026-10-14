@@ -1,0 +1,76 @@
+.give-teaser {
+  padding-bottom: 0;
+}
+
+.give-link,
+.give-copy {
+  display: inline-block;
+  margin-top: 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--action);
+  border-bottom: 1px solid var(--action);
+  padding-bottom: 2px;
+}
+
+.give-link:hover,
+.give-copy:hover {
+  color: var(--action-hover);
+  border-color: var(--action-hover);
+}
+
+.give-cards {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .give-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.give-card {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.give-card-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--action);
+  margin-bottom: 0.75rem;
+}
+
+.give-card-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.give-card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  max-width: 46ch;
+}
+
+.give-zelle {
+  margin-top: 1.25rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.give-copy {
+  margin-top: 0.85rem;
+}

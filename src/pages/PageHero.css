@@ -36,6 +36,10 @@
   object-position: center 78%;
 }
 
+.page-hero-give .page-hero-bg img {
+  object-position: center 46%;
+}
+
 .page-hero-leadership .page-hero-overlay {
   background: linear-gradient(
     to top,

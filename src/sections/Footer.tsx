@@ -49,6 +49,9 @@ export function Footer() {
             <p>
               <Link to="/faith">Statement of Faith</Link>
             </p>
+            <p>
+              <Link to="/give">Ways to Give</Link>
+            </p>
           </div>
         </div>
         <div className="footer-bottom">

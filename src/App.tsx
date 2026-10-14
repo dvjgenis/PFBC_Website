@@ -14,6 +14,7 @@ const LeadershipPage = lazy(() =>
   import('./pages/LeadershipPage').then((m) => ({ default: m.LeadershipPage })),
 )
 const ContactPage = lazy(() => import('./pages/ContactPage').then((m) => ({ default: m.ContactPage })))
+const GivePage = lazy(() => import('./pages/GivePage').then((m) => ({ default: m.GivePage })))
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
               <Route path="/faith" element={<FaithPage />} />
               <Route path="/leadership" element={<LeadershipPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/give" element={<GivePage />} />
             </Route>
           </Routes>
         </Suspense>

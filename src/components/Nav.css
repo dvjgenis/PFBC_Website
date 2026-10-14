@@ -113,9 +113,10 @@
   background: var(--paper);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: safe center;
   align-items: flex-end;
   padding: var(--page-padding);
+  overflow-y: auto;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s var(--ease-out);
