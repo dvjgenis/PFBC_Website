@@ -1,0 +1,28 @@
+.grid-background {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--page-padding);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.grid-line {
+  width: 1px;
+  height: 100%;
+  background: color-mix(in srgb, var(--ink) 3%, transparent);
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
+.grid-background.visible .grid-line {
+  transform: scaleY(1);
+  transition: transform 1s var(--ease-power3);
+}
+
+@media (max-width: 768px) {
+  .grid-line:nth-child(n + 6) {
+    display: none;
+  }
+}

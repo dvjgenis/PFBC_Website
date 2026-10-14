@@ -1,0 +1,36 @@
+.magnetic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background: var(--action);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+  will-change: transform;
+}
+
+.magnetic-btn:hover:not(:disabled) {
+  background: var(--action-hover);
+}
+
+.magnetic-btn:disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.magnetic-btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.magnetic-btn-outline:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}

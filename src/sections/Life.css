@@ -1,0 +1,68 @@
+.life-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.life-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .life-card {
+    grid-template-columns: 5fr 3fr;
+    align-items: end;
+  }
+
+  .life-card:nth-child(even) {
+    grid-template-columns: 3fr 5fr;
+  }
+
+  .life-card:nth-child(even) .life-card-image {
+    order: 2;
+  }
+
+  .life-card:nth-child(even) .life-card-text {
+    order: 1;
+  }
+}
+
+.life-card-image {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  position: relative;
+  width: 100%;
+}
+
+.life-card-image .image-carousel {
+  position: absolute;
+  inset: 0;
+}
+
+.life-card-title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.life-card-desc {
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.life-card-text {
+  padding: 1rem 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .life-card-image img {
+    transform: none;
+  }
+}
+

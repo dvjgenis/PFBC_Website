@@ -1,0 +1,164 @@
+.pastor-intro {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .pastor-intro {
+    grid-template-columns: minmax(220px, 340px) 1fr;
+    gap: 3rem;
+  }
+}
+
+.pastor-photo {
+  overflow: hidden;
+  background: var(--paper-deep);
+}
+
+.pastor-photo img {
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  object-fit: cover;
+}
+
+.pastor-names {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.pastor-names span {
+  display: block;
+  font-weight: 600;
+}
+
+.pastor-role {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--action);
+  margin-bottom: 1rem;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 3rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.contact-form {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.contact-field label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--ink-muted);
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: none;
+  border-color: var(--action);
+}
+
+.contact-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+}
+
+.contact-checkbox input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--action);
+}
+
+.contact-info {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-info-block h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--action);
+}
+
+.contact-info-block p,
+.contact-info-block a {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+
+.contact-info-block a:hover {
+  color: var(--action);
+}
+
+.contact-map {
+  margin-top: 1rem;
+  width: 100%;
+  height: 280px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.contact-success {
+  padding: 1.5rem;
+  background: var(--paper-deep);
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+}
+
+.contact-success a {
+  color: var(--action);
+}
+
+.contact-honey {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+}

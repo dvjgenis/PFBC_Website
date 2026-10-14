@@ -1,0 +1,78 @@
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 3rem;
+}
+
+.mission-tile {
+  background: var(--paper);
+  padding: 2rem;
+}
+
+.mission-tile-num {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--action);
+  margin-bottom: 1rem;
+}
+
+.mission-tile-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.mission-tile-text {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+.ordinances {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.ordinances-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.ordinances-list {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.ordinances-list li {
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.ordinances-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--action);
+}
+
+.ordinances-list a {
+  color: var(--action);
+  font-weight: 600;
+}
+
+.ordinances-list a:hover {
+  color: var(--action-hover);
+}

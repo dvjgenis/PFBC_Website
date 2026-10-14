@@ -1,0 +1,121 @@
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(6rem, 15vh, 10rem) var(--page-padding) clamp(3rem, 8vh, 5rem);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  transform: scale(1.15);
+  transition: transform 1.2s var(--ease-power3);
+}
+
+.hero.loaded .hero-bg img {
+  transform: scale(1);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 18, 16, 0.85) 0%,
+    rgba(20, 18, 16, 0.4) 50%,
+    rgba(20, 18, 16, 0.25) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  color: var(--paper);
+}
+
+.hero-meta {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.hero-line-wrap {
+  overflow: hidden;
+}
+
+.hero-title {
+  font-size: clamp(3.5rem, 14vw, 11rem);
+  font-weight: 800;
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 1rem;
+  opacity: 0.9;
+}
+
+.hero-cta {
+  margin-top: 2.5rem;
+}
+
+.hero-line {
+  display: block;
+  transform: translateY(120%);
+}
+
+.hero.loaded .hero-line {
+  transform: translateY(0);
+  transition: transform 1s var(--ease-power3);
+}
+
+.hero.loaded .hero-line:nth-child(1) { transition-delay: 0.05s; }
+.hero.loaded .hero-line:nth-child(2) { transition-delay: 0.12s; }
+.hero.loaded .hero-meta { transition-delay: 0.2s; }
+.hero.loaded .hero-cta { transition-delay: 0.28s; }
+
+.hero-meta,
+.hero-cta {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero.loaded .hero-meta,
+.hero.loaded .hero-cta {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg img {
+    transform: scale(1);
+  }
+  .hero-line,
+  .hero-meta,
+  .hero-cta {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

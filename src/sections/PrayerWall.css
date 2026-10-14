@@ -1,0 +1,224 @@
+.prayer-section {
+  background: var(--paper-deep);
+}
+
+.prayer-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0 1.5rem;
+}
+
+.prayer-topic {
+  padding: 0.625rem 1.125rem;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s var(--ease-back);
+}
+
+.prayer-topic:hover:not(:disabled) {
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.prayer-topic:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.prayer-topic-custom {
+  border-style: dashed;
+}
+
+.prayer-topic-custom.is-open {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.prayer-custom {
+  margin: -0.5rem 0 1.5rem;
+  max-width: 420px;
+}
+
+.prayer-custom-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 0.5rem;
+}
+
+.prayer-custom-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.prayer-custom-input {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 8px;
+  font-size: 0.9375rem;
+}
+
+.prayer-custom-input:focus {
+  outline: none;
+  border-color: var(--action);
+}
+
+.prayer-custom-submit {
+  padding: 0.7rem 1.1rem;
+  background: var(--action);
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.prayer-custom-submit:disabled {
+  opacity: 0.4;
+}
+
+.prayer-custom-count {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.prayer-wall {
+  position: relative;
+  min-height: 320px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--paper) 70%, transparent), var(--paper)),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 47px,
+      color-mix(in srgb, var(--ink) 5%, transparent) 48px
+    );
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.prayer-status {
+  margin: 0 0 1rem;
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+}
+
+.prayer-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--ink-muted);
+  font-size: 1.05rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.prayer-sticker {
+  position: absolute;
+  padding: 0.7rem 1rem 0.75rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  line-height: 1.2;
+  box-shadow: 0 8px 18px rgba(28, 25, 23, 0.08);
+  animation: sticker-in 0.45s var(--ease-back);
+  pointer-events: auto;
+  white-space: nowrap;
+  user-select: none;
+  background: #fff8ee;
+}
+
+.prayer-sticker:hover {
+  z-index: 2;
+}
+
+.prayer-sticker::before {
+  content: '';
+  position: absolute;
+  top: 0.35rem;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 1px 0 rgba(28, 25, 23, 0.15);
+}
+
+.prayer-sticker-cream {
+  background: #fff8ee;
+  color: var(--ink);
+}
+
+.prayer-sticker-rose {
+  background: #f3ddd8;
+  color: var(--action);
+}
+
+.prayer-sticker-gold {
+  background: #f4e6b8;
+  color: #4a3a12;
+}
+
+.prayer-sticker-sage {
+  background: #dde8d8;
+  color: #2d3b2a;
+}
+
+.prayer-sticker-ink {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.prayer-sticker-ink::before {
+  background: var(--paper);
+}
+
+.prayer-sticker-lilac {
+  background: #e8dff3;
+  color: #3d2a52;
+}
+
+.prayer-sticker.is-custom {
+  white-space: normal;
+  max-width: 11.5rem;
+  text-align: left;
+}
+
+@keyframes sticker-in {
+  from {
+    opacity: 0;
+    scale: 0.7;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prayer-sticker {
+    animation: none;
+  }
+
+  .prayer-topic:hover {
+    transform: none;
+  }
+}

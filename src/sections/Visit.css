@@ -1,0 +1,96 @@
+.visit-schedule-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 3rem 0 0;
+}
+
+.visit-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.visit-card {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.visit-card-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--action);
+  margin-bottom: 0.75rem;
+}
+
+.visit-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.visit-card-time {
+  font-size: 1.125rem;
+  color: var(--ink-muted);
+}
+
+.visit-card-note {
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
+
+.visit-card-note a {
+  color: var(--action);
+  font-weight: 600;
+}
+
+.visit-card-note a:hover {
+  color: var(--action-hover);
+}
+
+.visit-expect {
+  margin-top: 2rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.visit-expect li {
+  list-style: none;
+  padding-left: 1.25rem;
+  position: relative;
+  color: var(--ink-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.visit-expect li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--action);
+}
+
+.visit-map-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--action);
+  border-bottom: 1px solid var(--action);
+  padding-bottom: 2px;
+}
+
+.visit-map-link:hover {
+  color: var(--action-hover);
+  border-color: var(--action-hover);
+}
