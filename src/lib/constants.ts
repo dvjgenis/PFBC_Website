@@ -12,7 +12,9 @@ export const CHURCH = {
     'We are a warm, welcoming community of believers dedicated to sharing God\'s love, growing in faith together, and serving our community.',
   address: '2012 Wicklow Rd, Naperville, IL 60564',
   mapsUrl: 'https://maps.app.goo.gl/tZzhF5TEBcgKtSuF8',
-  email: 'info@fabcchicago.org',
+  phone: '(630) 904-4900',
+  email: 'pillaroffaithbc@gmail.com',
+  navWordmark: 'Pillar of Faith',
   facebook: 'https://www.facebook.com/pillaroffaithbc',
   facebookLabel: 'Pillar of Faith Baptist Church',
   pastor: {
@@ -88,7 +90,6 @@ export type Affiliation = {
 }
 
 export const AFFILIATIONS: Affiliation[] = [
-  { text: 'Fil-American Baptist Church (FABC) in Chicago', href: FABC.website },
   { text: 'In fellowship with the General Association of Regular Baptist Churches (GARBC)' },
   { text: 'Member of the Illinois-Missouri Association of Regular Baptist Churches (IL-MO ARBC)' },
 ]

@@ -78,7 +78,7 @@ export function Nav() {
         aria-label="Main navigation"
       >
         <button type="button" className="nav-wordmark" onClick={goHome}>
-          {CHURCH.shortName}
+          {CHURCH.navWordmark}
         </button>
         <div className="nav-meta">
           <span className="nav-clock">{CHURCH.city} {time}</span>
