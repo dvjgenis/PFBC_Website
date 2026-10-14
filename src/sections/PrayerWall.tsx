@@ -29,7 +29,8 @@ export function PrayerWall() {
       const next = await fetchStickers()
       setStickers(next)
       setError(null)
-    } catch {
+    } catch (err) {
+      if (import.meta.env.DEV) console.error('[PrayerWall]', err)
       setError('The prayer wall is unavailable right now. Please try again later.')
     } finally {
       setLoading(false)

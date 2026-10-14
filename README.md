@@ -17,7 +17,7 @@ npm run dev
 3. Copy **Project URL** and **anon public** key from **Project Settings → API** into `.env` (see `.env.example`).
 4. Restart `npm run dev` and open the home page **Prayer Wall** section (`#pray`).
 
-For production, set the same `VITE_*` variables in Vercel → **Settings → Environment Variables**, then redeploy.
+Production builds read `VITE_*` from committed `.env.production` (anon key is public in the browser bundle). You can override those values in Vercel → **Settings → Environment Variables** if needed, then redeploy.
 
 ## Build
 
