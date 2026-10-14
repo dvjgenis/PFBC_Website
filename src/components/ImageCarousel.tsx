@@ -67,20 +67,17 @@ export function ImageCarousel({ slides, label, interval = 5200 }: ImageCarouselP
       onTouchEnd={onTouchEnd}
     >
       <div className="image-carousel-viewport">
-        {slides.map((slide, i) => (
-          <div
-            key={slide.src}
-            className={`image-carousel-slide ${i === safeIndex ? 'is-active' : ''}`}
-            aria-hidden={i !== safeIndex}
-          >
-            <img
-              src={slide.src}
-              alt={i === safeIndex ? slide.alt : ''}
-              loading={Math.abs(i - safeIndex) <= 1 || i === 0 ? 'eager' : 'lazy'}
-              style={{ objectPosition: slide.position ?? 'center 40%' }}
-            />
-          </div>
-        ))}
+        <div className="image-carousel-slide is-active">
+          <img
+            key={current.src}
+            src={current.src}
+            alt={current.alt}
+            loading="lazy"
+            decoding="async"
+            fetchPriority={safeIndex === 0 ? 'high' : 'low'}
+            style={{ objectPosition: current.position ?? 'center 40%' }}
+          />
+        </div>
       </div>
 
       <p className="visually-hidden" aria-live="polite">

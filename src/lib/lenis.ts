@@ -11,13 +11,13 @@ export function initLenis(reducedMotion: boolean): Lenis | null {
   if (reducedMotion) return null
 
   const lenis = new Lenis({
-    duration: 1,
+    duration: 0.85,
     easing: (t: number) => 1 - Math.pow(1 - t, 3),
     orientation: 'vertical',
     gestureOrientation: 'vertical',
     smoothWheel: true,
-    wheelMultiplier: 1,
-    touchMultiplier: 2,
+    wheelMultiplier: 0.85,
+    touchMultiplier: 1.25,
     syncTouch: false,
     prevent: (node) => Boolean(node.closest('[data-lenis-prevent]')),
   })
@@ -25,7 +25,7 @@ export function initLenis(reducedMotion: boolean): Lenis | null {
   lenis.on('scroll', ScrollTrigger.update)
   lenisRaf = (time: number) => lenis.raf(time * 1000)
   gsap.ticker.add(lenisRaf)
-  gsap.ticker.lagSmoothing(0)
+  gsap.ticker.lagSmoothing(500, 33)
 
   lenisInstance = lenis
   return lenis

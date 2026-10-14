@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import L from 'leaflet'
+import { useInView } from '../hooks/useInView'
 import { MISSIONS, missionName, type Mission } from '../lib/missions'
 import { getLenis } from '../lib/lenis'
 import 'leaflet/dist/leaflet.css'
@@ -28,6 +29,7 @@ function makePin(active: boolean) {
 }
 
 export function MissionMap() {
+  const { ref: mapSectionRef, inView } = useInView<HTMLDivElement>({ rootMargin: '280px' })
   const frameRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<L.Map | null>(null)
   const markersRef = useRef<Record<string, L.Marker>>({})
@@ -37,6 +39,7 @@ export function MissionMap() {
   const activeCountry = active?.country ?? null
 
   useEffect(() => {
+    if (!inView) return
     const el = frameRef.current
     if (!el || mapRef.current) return
 
@@ -88,7 +91,7 @@ export function MissionMap() {
       mapRef.current = null
       markersRef.current = {}
     }
-  }, [points])
+  }, [points, inView])
 
   useEffect(() => {
     for (const country of Object.keys(points)) {
@@ -105,7 +108,7 @@ export function MissionMap() {
   }
 
   return (
-    <div className="missions" id="missions">
+    <div className="missions" id="missions" ref={mapSectionRef}>
       <div className="missions-copy">
         <p className="section-label">Sent and supported</p>
         <h3 className="missions-title">Partners in Missions</h3>

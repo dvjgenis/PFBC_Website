@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useState, type FormEvent } from 'react'
+import { useInView } from '../hooks/useInView'
+import { usePageVisible } from '../hooks/usePageVisible'
 import { isSupabaseConfigured } from '../lib/supabase'
 import {
   CUSTOM_LIMIT,
@@ -14,6 +16,10 @@ import {
 import './PrayerWall.css'
 
 export function PrayerWall() {
+  const { ref: sectionRef, inView } = useInView<HTMLElement>({ rootMargin: '80px', once: false })
+  const pageVisible = usePageVisible()
+  const active = inView && pageVisible
+
   const [stickers, setStickers] = useState<PrayerSticker[]>([])
   const [customOpen, setCustomOpen] = useState(false)
   const [customText, setCustomText] = useState('')
@@ -38,23 +44,20 @@ export function PrayerWall() {
   }, [])
 
   useEffect(() => {
+    if (!active || !isSupabaseConfigured) return
+
     void refresh()
     const unsubscribe = subscribeStickers(() => {
       void refresh()
     })
-    const onVisible = () => {
-      if (document.visibilityState === 'visible') void refresh()
-    }
-    document.addEventListener('visibilitychange', onVisible)
     const poll = window.setInterval(() => {
       void refresh()
-    }, 12000)
+    }, 30000)
     return () => {
       unsubscribe()
-      document.removeEventListener('visibilitychange', onVisible)
       window.clearInterval(poll)
     }
-  }, [refresh])
+  }, [refresh, active])
 
   const placeSticker = async (topic: PrayerTopic) => {
     if (busy || !isSupabaseConfigured) return
@@ -100,7 +103,7 @@ export function PrayerWall() {
   }
 
   return (
-    <section className="section prayer-section" id="pray">
+    <section className="section prayer-section" id="pray" ref={sectionRef}>
       <div className="section-inner">
         <p className="section-label">A quiet moment</p>
         <h2 className="section-title">How can we pray for you today?</h2>
