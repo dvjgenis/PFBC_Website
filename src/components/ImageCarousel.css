@@ -73,6 +73,12 @@
   background: var(--paper);
 }
 
+@media (hover: none) {
+  .image-carousel-arrow {
+    opacity: 1;
+  }
+}
+
 .image-carousel-dots {
   position: absolute;
   left: 0;
@@ -87,6 +93,16 @@
 
 .image-carousel-dot {
   pointer-events: auto;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.image-carousel-dot::after {
+  content: '';
   width: 0.45rem;
   height: 0.45rem;
   border-radius: 999px;
@@ -95,7 +111,7 @@
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.image-carousel-dot.is-active {
+.image-carousel-dot.is-active::after {
   background: var(--paper);
   transform: scale(1.25);
 }

@@ -30,6 +30,9 @@ export function Footer() {
           <div className="footer-col">
             <h3>Contact</h3>
             <p>
+              <a href={`tel:+1${CHURCH.phone.replace(/\D/g, '')}`}>{CHURCH.phone}</a>
+            </p>
+            <p>
               <a href={`mailto:${CHURCH.email}`}>{CHURCH.email}</a>
             </p>
             <p>

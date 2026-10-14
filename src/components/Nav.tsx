@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { CHURCH, NAV_LINKS } from '../lib/constants'
 import { gatheringStatusLabel, isGatheringOpen } from '../lib/gatheringHours'
@@ -7,6 +7,8 @@ import './Nav.css'
 
 export function Nav() {
   const [open, setOpen] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
   const [time, setTime] = useState('')
   const [gatheringOpen, setGatheringOpen] = useState(() => isGatheringOpen())
   const navigate = useNavigate()
@@ -44,6 +46,18 @@ export function Nav() {
       document.body.style.overflow = ''
       lenis?.start()
     }
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return
+    closeButtonRef.current?.focus()
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      setOpen(false)
+      menuButtonRef.current?.focus()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
   const goHome = () => {
@@ -96,6 +110,7 @@ export function Nav() {
             </span>
           </span>
           <button
+            ref={menuButtonRef}
             type="button"
             className="nav-menu-btn"
             onClick={() => setOpen(true)}
@@ -115,7 +130,15 @@ export function Nav() {
         aria-label="Navigation menu"
         hidden={!open}
       >
-        <button type="button" className="nav-overlay-close" onClick={() => setOpen(false)}>
+        <button
+          ref={closeButtonRef}
+          type="button"
+          className="nav-overlay-close"
+          onClick={() => {
+            setOpen(false)
+            menuButtonRef.current?.focus()
+          }}
+        >
           Close
         </button>
         <ul className="nav-links">

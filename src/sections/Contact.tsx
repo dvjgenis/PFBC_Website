@@ -164,6 +164,10 @@ export function Contact() {
               ))}
             </div>
             <div className="contact-info-block">
+              <h3>Phone</h3>
+              <a href={`tel:+1${CHURCH.phone.replace(/\D/g, '')}`}>{CHURCH.phone}</a>
+            </div>
+            <div className="contact-info-block">
               <h3>Email</h3>
               <a href={`mailto:${CHURCH.email}`}>{CHURCH.email}</a>
             </div>
