@@ -85,15 +85,15 @@ export function Nav() {
           {CHURCH.navWordmark}
         </button>
         <div className="nav-meta">
-          <span className="nav-clock">
+          <span className="nav-clock" title={gatheringStatusLabel(gatheringOpen)}>
             <span
-              className={`nav-gathering-dot${gatheringOpen ? ' is-open' : ''}`}
-              aria-hidden="true"
+              className={`nav-open-dot${gatheringOpen ? ' is-open' : ''}`}
+              aria-hidden
             />
-            <span className="nav-clock-text">
-              {CHURCH.city} {time}
+            {CHURCH.city} {time}
+            <span className="nav-open-label" aria-live="polite">
+              {gatheringOpen ? 'Open' : 'Closed'}
             </span>
-            <span className="visually-hidden">{gatheringStatusLabel(gatheringOpen)}</span>
           </span>
           <button
             type="button"

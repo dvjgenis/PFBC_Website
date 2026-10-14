@@ -130,6 +130,7 @@ textarea {
 }
 
 .review-nudge {
+  margin-top: 0.85rem;
   font-size: 0.8125rem;
   line-height: 1.6;
   opacity: 0.62;

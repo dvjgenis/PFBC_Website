@@ -68,7 +68,7 @@ export function Contact() {
           <a href={CHURCH.googleReviewUrl} target="_blank" rel="noopener noreferrer">
             Leave a Google review
           </a>
-          — it helps others discover our church.
+          {' '}— it helps others discover our church.
         </p>
 
         <div className="contact-grid">
