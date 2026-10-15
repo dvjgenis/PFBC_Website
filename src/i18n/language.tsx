@@ -38,6 +38,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const selected = LANGUAGES.find((language) => language.id === lang)
     document.documentElement.lang = selected?.html ?? 'en'
+    document.documentElement.dir = selected?.dir ?? 'ltr'
     const description = document.querySelector('meta[name="description"]')
     if (description) description.setAttribute('content', m.meta.description)
   }, [lang, m])

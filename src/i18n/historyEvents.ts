@@ -1,7 +1,7 @@
 import { CHURCH_HISTORY_MILESTONES } from '../lib/history'
 import type { LangId } from './types'
 
-type EventCopy = { date: string; text: string }
+export type EventCopy = { date: string; text: string }
 
 const tl: EventCopy[] = [
   {

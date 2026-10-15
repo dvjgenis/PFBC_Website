@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useI18n } from '../i18n/language'
-import { LANGUAGES, type LangId } from '../i18n/types'
+import { languageMenu, type LangId } from '../i18n/types'
 import { CHURCH, NAV_LINKS } from '../lib/constants'
 import { isGatheringOpen } from '../lib/gatheringHours'
 import { getLenis, scrollTo, scrollToHash } from '../lib/lenis'
@@ -16,6 +16,7 @@ export function Nav() {
   const navigate = useNavigate()
   const location = useLocation()
   const { lang, setLang, m } = useI18n()
+  const menu = languageMenu()
   const navLabels = [m.nav.imNew, m.nav.faith, m.nav.leadership, m.nav.word, m.nav.prayer, m.nav.contact, m.nav.give]
 
   useEffect(() => {
@@ -130,10 +131,19 @@ export function Nav() {
               aria-label={m.nav.language}
               onChange={(event) => setLang(event.target.value as LangId)}
             >
-              {LANGUAGES.map((language) => (
+              {menu.english.map((language) => (
                 <option key={language.id} value={language.id}>
-                  {language.label}
+                  {language.flag} {language.label}
                 </option>
+              ))}
+              {menu.groups.map((group) => (
+                <optgroup key={group.id} label={group.label}>
+                  {group.languages.map((language) => (
+                    <option key={language.id} value={language.id}>
+                      {language.flag} {language.label}
+                    </option>
+                  ))}
+                </optgroup>
               ))}
             </select>
           </label>

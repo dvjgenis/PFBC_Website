@@ -78,6 +78,6 @@
 
 @media (min-width: 768px) {
   .footer-review-nudge {
-    text-align: left;
+    text-align: start;
   }
 }

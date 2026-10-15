@@ -198,7 +198,7 @@
 .prayer-sticker.is-custom {
   white-space: normal;
   max-width: 11.5rem;
-  text-align: left;
+  text-align: start;
 }
 
 @keyframes sticker-in {

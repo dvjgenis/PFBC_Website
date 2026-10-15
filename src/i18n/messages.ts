@@ -1,3 +1,4 @@
+import { ar, hi, id, ja, ko, ml, pl, pt, ta, te, war, zh } from './locales'
 import type { LangId, Messages } from './types'
 
 const en: Messages = {
@@ -1759,4 +1760,6 @@ const es: Messages = {
   marquee: 'adoración · evangelio · discipulado · comunidad · ',
 }
 
-export const MESSAGES: Record<LangId, Messages> = { en, tl, ceb, hil, ilo, es }
+export const MESSAGES: Record<LangId, Messages> = {
+  en, tl, ceb, hil, ilo, es, war, zh, ko, ja, ar, pl, id, pt, hi, ml, ta, te,
+}

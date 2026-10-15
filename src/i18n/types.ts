@@ -1,11 +1,42 @@
-export const LANGUAGES = [
-  { id: 'en', label: 'English', html: 'en' },
-  { id: 'tl', label: 'Tagalog', html: 'tl' },
-  { id: 'ceb', label: 'Cebuano', html: 'ceb' },
-  { id: 'hil', label: 'Illonggo', html: 'hil' },
-  { id: 'ilo', label: 'Illocano', html: 'ilo' },
-  { id: 'es', label: 'Spanish', html: 'es' },
+export const LANGUAGE_GROUPS = [
+  { id: 'filipino', label: 'Filipino' },
+  { id: 'european', label: 'European' },
+  { id: 'east-asian', label: 'East Asian' },
+  { id: 'southeast-asian', label: 'Southeast Asian' },
+  { id: 'south-asian', label: 'South Asian' },
+  { id: 'middle-eastern', label: 'Middle Eastern' },
 ] as const
+
+export const LANGUAGES = [
+  { id: 'en', label: 'English', html: 'en', dir: 'ltr', flag: '🇺🇸', group: 'english' },
+  { id: 'tl', label: 'Tagalog', html: 'tl', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
+  { id: 'ceb', label: 'Cebuano', html: 'ceb', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
+  { id: 'hil', label: 'Illonggo', html: 'hil', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
+  { id: 'ilo', label: 'Illocano', html: 'ilo', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
+  { id: 'war', label: 'Waray', html: 'war', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
+  { id: 'es', label: 'Spanish', html: 'es', dir: 'ltr', flag: '🇪🇸', group: 'european' },
+  { id: 'pt', label: 'Portuguese', html: 'pt-BR', dir: 'ltr', flag: '🇧🇷', group: 'european' },
+  { id: 'pl', label: 'Polish', html: 'pl', dir: 'ltr', flag: '🇵🇱', group: 'european' },
+  { id: 'zh', label: 'Mandarin', html: 'zh-Hans', dir: 'ltr', flag: '🇨🇳', group: 'east-asian' },
+  { id: 'ko', label: 'Korean', html: 'ko', dir: 'ltr', flag: '🇰🇷', group: 'east-asian' },
+  { id: 'ja', label: 'Japanese', html: 'ja', dir: 'ltr', flag: '🇯🇵', group: 'east-asian' },
+  { id: 'id', label: 'Indonesian', html: 'id', dir: 'ltr', flag: '🇮🇩', group: 'southeast-asian' },
+  { id: 'hi', label: 'Hindi', html: 'hi', dir: 'ltr', flag: '🇮🇳', group: 'south-asian' },
+  { id: 'ml', label: 'Malayalam', html: 'ml', dir: 'ltr', flag: '🇮🇳', group: 'south-asian' },
+  { id: 'ta', label: 'Tamil', html: 'ta', dir: 'ltr', flag: '🇮🇳', group: 'south-asian' },
+  { id: 'te', label: 'Telugu', html: 'te', dir: 'ltr', flag: '🇮🇳', group: 'south-asian' },
+  { id: 'ar', label: 'Arabic', html: 'ar', dir: 'rtl', flag: '🇸🇦', group: 'middle-eastern' },
+] as const
+
+export function languageMenu() {
+  return {
+    english: LANGUAGES.filter((language) => language.group === 'english'),
+    groups: LANGUAGE_GROUPS.map((group) => ({
+      ...group,
+      languages: LANGUAGES.filter((language) => language.group === group.id),
+    })),
+  }
+}
 
 export type LangId = (typeof LANGUAGES)[number]['id']
 
