@@ -37,6 +37,7 @@ export const LANGUAGES = [
   { id: 'te', label: 'Telugu', html: 'te', dir: 'ltr', flag: '🇮🇳', group: 'south-asian' },
   { id: 'ar', label: 'Arabic', html: 'ar', dir: 'rtl', flag: '🇸🇦', group: 'middle-eastern' },
   { id: 'fa', label: 'Farsi', html: 'fa', dir: 'rtl', flag: '🇮🇷', group: 'middle-eastern' },
+  { id: 'he', label: 'Hebrew', html: 'he', dir: 'rtl', flag: '🇮🇱', group: 'middle-eastern' },
   { id: 'sw', label: 'Swahili', html: 'sw', dir: 'ltr', flag: '🇹🇿', group: 'african' },
   { id: 'ha', label: 'Hausa', html: 'ha', dir: 'ltr', flag: '🇳🇬', group: 'african' },
   { id: 'yo', label: 'Yoruba', html: 'yo', dir: 'ltr', flag: '🇳🇬', group: 'african' },

@@ -1,4 +1,10 @@
 import { CHURCH_HISTORY_MILESTONES } from '../lib/history'
+import { ha, lg, sw, yo, zu } from './history/africa'
+import { ar, fa, id, ja, ko, ms, zh } from './history/asia'
+import { de, fr, it, pl, pt } from './history/europe'
+import { he } from './history/he'
+import { hi, ml, pa, ta, te, ur } from './history/indic'
+import { bcl, pag, pam, war } from './history/ph'
 import type { LangId } from './types'
 
 export type EventCopy = { date: string; text: string }
@@ -598,7 +604,15 @@ const es: EventCopy[] = [
   },
 ]
 
-const BY_LANG: Partial<Record<LangId, EventCopy[]>> = { tl, ceb, hil, ilo, es }
+const BY_LANG: Partial<Record<LangId, EventCopy[]>> = {
+  tl, ceb, hil, ilo, war, bcl, pam, pag, es,
+  pt, pl, fr, it, de,
+  zh, ko, ja,
+  id, ms,
+  hi, pa, ur, ml, ta, te,
+  ar, fa, he,
+  sw, ha, yo, lg, zu,
+}
 
 for (const [lang, events] of Object.entries(BY_LANG)) {
   if (events.length !== CHURCH_HISTORY_MILESTONES.length) {

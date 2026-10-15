@@ -1,5 +1,5 @@
 import {
-  ar, bcl, de, fa, fr, ha, hi, id, it, ja, ko, lg, ml, ms, pa, pag, pam, pl, pt, sw, ta, te, ur, war, yo, zh, zu,
+  ar, bcl, de, fa, fr, ha, he, hi, id, it, ja, ko, lg, ml, ms, pa, pag, pam, pl, pt, sw, ta, te, ur, war, yo, zh, zu,
 } from './locales'
 import type { LangId, Messages } from './types'
 
@@ -1774,6 +1774,6 @@ export const MESSAGES: Record<LangId, Messages> = {
   zh, ko, ja,
   id, ms,
   hi, pa, ur, ml, ta, te,
-  ar, fa,
+  ar, fa, he,
   sw, ha, yo, lg, zu,
 }
