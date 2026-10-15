@@ -5,6 +5,7 @@ export const LANGUAGE_GROUPS = [
   { id: 'southeast-asian', label: 'Southeast Asian' },
   { id: 'south-asian', label: 'South Asian' },
   { id: 'middle-eastern', label: 'Middle Eastern' },
+  { id: 'african', label: 'African' },
 ] as const
 
 export const LANGUAGES = [
@@ -14,18 +15,33 @@ export const LANGUAGES = [
   { id: 'hil', label: 'Illonggo', html: 'hil', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
   { id: 'ilo', label: 'Illocano', html: 'ilo', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
   { id: 'war', label: 'Waray', html: 'war', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
+  { id: 'bcl', label: 'Bikol', html: 'bcl', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
+  { id: 'pam', label: 'Kapampangan', html: 'pam', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
+  { id: 'pag', label: 'Pangasinan', html: 'pag', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
   { id: 'es', label: 'Spanish', html: 'es', dir: 'ltr', flag: '🇪🇸', group: 'european' },
   { id: 'pt', label: 'Portuguese', html: 'pt-BR', dir: 'ltr', flag: '🇧🇷', group: 'european' },
   { id: 'pl', label: 'Polish', html: 'pl', dir: 'ltr', flag: '🇵🇱', group: 'european' },
+  { id: 'fr', label: 'French', html: 'fr', dir: 'ltr', flag: '🇫🇷', group: 'european' },
+  { id: 'it', label: 'Italian', html: 'it', dir: 'ltr', flag: '🇮🇹', group: 'european' },
+  { id: 'de', label: 'German', html: 'de', dir: 'ltr', flag: '🇩🇪', group: 'european' },
   { id: 'zh', label: 'Mandarin', html: 'zh-Hans', dir: 'ltr', flag: '🇨🇳', group: 'east-asian' },
   { id: 'ko', label: 'Korean', html: 'ko', dir: 'ltr', flag: '🇰🇷', group: 'east-asian' },
   { id: 'ja', label: 'Japanese', html: 'ja', dir: 'ltr', flag: '🇯🇵', group: 'east-asian' },
   { id: 'id', label: 'Indonesian', html: 'id', dir: 'ltr', flag: '🇮🇩', group: 'southeast-asian' },
+  { id: 'ms', label: 'Malaysian', html: 'ms-MY', dir: 'ltr', flag: '🇲🇾', group: 'southeast-asian' },
   { id: 'hi', label: 'Hindi', html: 'hi', dir: 'ltr', flag: '🇮🇳', group: 'south-asian' },
+  { id: 'pa', label: 'Punjabi', html: 'pa', dir: 'ltr', flag: '🇮🇳', group: 'south-asian' },
+  { id: 'ur', label: 'Urdu', html: 'ur', dir: 'rtl', flag: '🇵🇰', group: 'south-asian' },
   { id: 'ml', label: 'Malayalam', html: 'ml', dir: 'ltr', flag: '🇮🇳', group: 'south-asian' },
   { id: 'ta', label: 'Tamil', html: 'ta', dir: 'ltr', flag: '🇮🇳', group: 'south-asian' },
   { id: 'te', label: 'Telugu', html: 'te', dir: 'ltr', flag: '🇮🇳', group: 'south-asian' },
   { id: 'ar', label: 'Arabic', html: 'ar', dir: 'rtl', flag: '🇸🇦', group: 'middle-eastern' },
+  { id: 'fa', label: 'Farsi', html: 'fa', dir: 'rtl', flag: '🇮🇷', group: 'middle-eastern' },
+  { id: 'sw', label: 'Swahili', html: 'sw', dir: 'ltr', flag: '🇹🇿', group: 'african' },
+  { id: 'ha', label: 'Hausa', html: 'ha', dir: 'ltr', flag: '🇳🇬', group: 'african' },
+  { id: 'yo', label: 'Yoruba', html: 'yo', dir: 'ltr', flag: '🇳🇬', group: 'african' },
+  { id: 'lg', label: 'Luganda', html: 'lg', dir: 'ltr', flag: '🇺🇬', group: 'african' },
+  { id: 'zu', label: 'Zulu', html: 'zu', dir: 'ltr', flag: '🇿🇦', group: 'african' },
 ] as const
 
 export function languageMenu() {
@@ -70,6 +86,7 @@ export type Messages = {
     live: string
     directions: string
     fact: string
+    services: string
     cards: CardCopy[]
   }
   times: string[]

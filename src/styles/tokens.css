@@ -11,8 +11,8 @@
   --footer-bg: #141210;
   --footer-ink: #f6f1ea;
 
-  --font-display: "Instrument Sans", system-ui, "PingFang SC", "Hiragino Sans", "Noto Sans CJK SC", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans Arabic", "Kohinoor Devanagari", "Noto Sans Devanagari", "Malayalam Sangam MN", "Noto Sans Malayalam", "Tamil Sangam MN", "Noto Sans Tamil", "Kohinoor Telugu", "Noto Sans Telugu", sans-serif;
-  --font-serif: "Fraunces", Georgia, "Songti SC", "Hiragino Mincho ProN", "Noto Serif CJK JP", "Noto Naskh Arabic", "Noto Serif Devanagari", "Noto Serif Malayalam", "Noto Serif Tamil", "Noto Serif Telugu", serif;
+  --font-display: "Instrument Sans", system-ui, "PingFang SC", "Hiragino Sans", "Noto Sans CJK SC", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans Arabic", "Geeza Pro", "Noto Nastaliq Urdu", "Kohinoor Devanagari", "Noto Sans Devanagari", "Gurmukhi MT", "Mukta Mahee", "Noto Sans Gurmukhi", "Malayalam Sangam MN", "Noto Sans Malayalam", "Tamil Sangam MN", "Noto Sans Tamil", "Kohinoor Telugu", "Noto Sans Telugu", sans-serif;
+  --font-serif: "Fraunces", Georgia, "Songti SC", "Hiragino Mincho ProN", "Noto Serif CJK JP", "Noto Naskh Arabic", "Noto Nastaliq Urdu", "Noto Serif Devanagari", "Noto Serif Gurmukhi", "Noto Serif Malayalam", "Noto Serif Tamil", "Noto Serif Telugu", serif;
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-material: cubic-bezier(0.4, 0, 0.2, 1);
@@ -164,7 +164,7 @@ textarea {
   border: 0;
 }
 
-html:is([lang='zh-Hans'], [lang='ja'], [lang='ko'], [lang='ar'], [lang='hi'], [lang='ml'], [lang='ta'], [lang='te']) * {
+html:is([lang='zh-Hans'], [lang='ja'], [lang='ko'], [lang='ar'], [lang='fa'], [lang='ur'], [lang='hi'], [lang='pa'], [lang='ml'], [lang='ta'], [lang='te']) * {
   letter-spacing: 0 !important;
 }
 

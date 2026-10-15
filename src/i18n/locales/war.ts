@@ -43,6 +43,7 @@ export const war: Messages = {
     live: 'Naka-livestream gihapon ha',
     directions: 'Kuhaa an direksyon',
     fact: 'An usa la nga Baptist nga singbahan ha Naperville.',
+    services: 'An mga pagsimba in Ingles.',
     cards: [
       { label: 'Dominggo', title: 'Pagsimba', time: '3:30 – 5:00 PM' },
       { label: 'Syahan nga Huwebes', title: 'Bible Study', time: '7:00 PM · Ha personal ha singbahan' },

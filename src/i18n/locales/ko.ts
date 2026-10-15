@@ -43,6 +43,7 @@ export const ko: Messages = {
     live: '라이브 중계',
     directions: '길 안내',
     fact: '네이퍼빌의 유일한 침례교회입니다.',
+    services: '예배는 영어로 드립니다.',
     cards: [
       { label: '주일', title: '예배', time: '오후 3:30 – 5:00' },
       { label: '첫째 목요일', title: '성경 공부', time: '오후 7:00 · 교회에서 현장' },

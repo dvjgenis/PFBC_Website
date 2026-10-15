@@ -43,6 +43,7 @@ export const pt: Messages = {
     live: 'Também transmitido ao vivo em',
     directions: 'Como chegar',
     fact: 'A única igreja batista em Naperville.',
+    services: 'Os cultos são em inglês.',
     cards: [
       { label: 'Domingo', title: 'Culto', time: '15h30–17h' },
       { label: '1ª quinta', title: 'Estudo bíblico', time: '19h · Presencial na igreja' },

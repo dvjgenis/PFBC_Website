@@ -12,6 +12,7 @@ export function Visit() {
         <h2 className="section-title">{m.visit.title}</h2>
         <p className="body-text">{m.visit.body}</p>
         <p className="visit-fact">{m.visit.fact}</p>
+        <p className="visit-services">{m.visit.services}</p>
         <ul className="visit-expect">
           {m.visit.expect.map((item) => (
             <li key={item}>{item}</li>

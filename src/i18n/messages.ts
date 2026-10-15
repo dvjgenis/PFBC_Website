@@ -1,4 +1,6 @@
-import { ar, hi, id, ja, ko, ml, pl, pt, ta, te, war, zh } from './locales'
+import {
+  ar, bcl, de, fa, fr, ha, hi, id, it, ja, ko, lg, ml, ms, pa, pag, pam, pl, pt, sw, ta, te, ur, war, yo, zh, zu,
+} from './locales'
 import type { LangId, Messages } from './types'
 
 const en: Messages = {
@@ -44,6 +46,7 @@ const en: Messages = {
     live: 'Also livestreamed on',
     directions: 'Get directions',
     fact: 'The only Baptist church in Naperville.',
+    services: 'Services are in English.',
     cards: [
       { label: 'Sunday', title: 'Worship Service', time: '3:30 – 5:00 PM' },
       { label: '1st Thursday', title: 'Bible Study', time: '7:00 PM · In person at the church' },
@@ -339,6 +342,7 @@ const tl: Messages = {
     live: 'Naka-livestream din sa',
     directions: 'Kunin ang direksyon',
     fact: 'Ang tanging Baptist church sa Naperville.',
+    services: 'Ang mga pagsamba ay sa Ingles.',
     cards: [
       { label: 'Linggo', title: 'Pagsamba', time: '3:30 – 5:00 PM' },
       { label: 'Unang Huwebes', title: 'Bible Study', time: '7:00 PM · Sa church mismo' },
@@ -640,6 +644,7 @@ const ceb: Messages = {
     live: 'Naka-livestream usab sa',
     directions: 'Kuhaa ang direksyon',
     fact: 'Ang bugtong nga Baptist church sa Naperville.',
+    services: 'Ang mga pagsimba anaa sa English.',
     cards: [
       { label: 'Dominggo', title: 'Pagsimba', time: '3:30 – 5:00 PM' },
       { label: 'Unang Huwebes', title: 'Bible Study', time: '7:00 PM · Sa church mismo' },
@@ -935,6 +940,7 @@ const hil: Messages = {
     live: 'Gina-livestream man sa',
     directions: 'Kuhaa ang direksyon',
     fact: 'Ang amo lang nga Baptist church sa Naperville.',
+    services: 'Ang mga pagsimba ara sa English.',
     cards: [
       { label: 'Domingo', title: 'Pagsimba', time: '3:30 – 5:00 PM' },
       { label: 'Una nga Huwebes', title: 'Bible Study', time: '7:00 PM · Sa church mismo' },
@@ -1205,6 +1211,7 @@ const ilo: Messages = {
     live: 'Maipapan met iti livestream idiay',
     directions: 'Alaen ti direksion',
     fact: 'Ti maymaysa a Baptist church idiay Naperville.',
+    services: 'Dagiti panagdaydayaw ket iti English.',
     cards: [
       { label: 'Domingo', title: 'Panagdaydayaw', time: '3:30 – 5:00 PM' },
       { label: 'Umuna a Huebes', title: 'Bible Study', time: '7:00 PM · Iti church mismo' },
@@ -1504,6 +1511,7 @@ const es: Messages = {
     live: 'También en vivo en',
     directions: 'Cómo llegar',
     fact: 'La única iglesia bautista en Naperville.',
+    services: 'Los servicios son en inglés.',
     cards: [
       { label: 'Domingo', title: 'Culto', time: '3:30 – 5:00 PM' },
       { label: 'Primer jueves', title: 'Estudio bíblico', time: '7:00 PM · En la iglesia' },
@@ -1761,5 +1769,11 @@ const es: Messages = {
 }
 
 export const MESSAGES: Record<LangId, Messages> = {
-  en, tl, ceb, hil, ilo, es, war, zh, ko, ja, ar, pl, id, pt, hi, ml, ta, te,
+  en, tl, ceb, hil, ilo, war, bcl, pam, pag, es,
+  pt, pl, fr, it, de,
+  zh, ko, ja,
+  id, ms,
+  hi, pa, ur, ml, ta, te,
+  ar, fa,
+  sw, ha, yo, lg, zu,
 }

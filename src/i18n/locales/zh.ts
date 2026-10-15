@@ -42,6 +42,7 @@ export const zh: Messages = {
     live: '也可在此观看直播',
     directions: '获取路线',
     fact: '内珀维尔唯一的浸信会。',
+    services: '聚会使用英语。',
     cards: [
       { label: '主日', title: '主日崇拜', time: '下午 3:30 – 5:00' },
       { label: '第一个周四', title: '查经', time: '晚上 7:00 · 在教会现场' },

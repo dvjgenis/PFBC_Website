@@ -43,6 +43,7 @@ export const pl: Messages = {
     live: 'Transmisja także na',
     directions: 'Wyznacz trasę',
     fact: 'Jedyny kościół baptystyczny w Naperville.',
+    services: 'Nabożeństwa odbywają się po angielsku.',
     cards: [
       { label: 'Niedziela', title: 'Nabożeństwo', time: '15:30 – 17:00' },
       { label: '1. czwartek', title: 'Studium Biblii', time: '19:00 · Na miejscu w kościele' },

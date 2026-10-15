@@ -87,6 +87,12 @@
   line-height: 1.35;
 }
 
+.visit-services {
+  margin-top: 0.55rem;
+  max-width: 36rem;
+  font-weight: 600;
+}
+
 .visit-map-link {
   display: inline-block;
   margin-top: 2rem;

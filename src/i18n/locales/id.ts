@@ -43,6 +43,7 @@ export const id: Messages = {
     live: 'Juga disiarkan langsung di',
     directions: 'Dapatkan arah',
     fact: 'Satu-satunya gereja Baptis di Naperville.',
+    services: 'Ibadah dilakukan dalam bahasa Inggris.',
     cards: [
       { label: 'Minggu', title: 'Ibadah', time: '15.30–17.00' },
       { label: 'Kamis pertama', title: 'Pendalaman Alkitab', time: '19.00 · Tatap muka di gereja' },

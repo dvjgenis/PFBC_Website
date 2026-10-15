@@ -43,6 +43,7 @@ export const ja: Messages = {
     live: 'ライブ配信はこちら',
     directions: '道順を見る',
     fact: 'ネーパービルで唯一のバプテスト教会です。',
+    services: '集会は英語で行われます。',
     cards: [
       { label: '日曜', title: '礼拝', time: '午後3:30 – 5:00' },
       { label: '第1木曜', title: '聖書研究', time: '午後7:00 · 教会で対面' },
