@@ -29,6 +29,7 @@ export const LANGUAGES = [
   { id: 'ja', label: 'Japanese', html: 'ja', dir: 'ltr', flag: '🇯🇵', group: 'east-asian' },
   { id: 'id', label: 'Indonesian', html: 'id', dir: 'ltr', flag: '🇮🇩', group: 'southeast-asian' },
   { id: 'ms', label: 'Malaysian', html: 'ms-MY', dir: 'ltr', flag: '🇲🇾', group: 'southeast-asian' },
+  { id: 'sg', label: 'Singlish', html: 'en-SG', dir: 'ltr', flag: '🇸🇬', group: 'southeast-asian' },
   { id: 'hi', label: 'Hindi', html: 'hi', dir: 'ltr', flag: '🇮🇳', group: 'south-asian' },
   { id: 'pa', label: 'Punjabi', html: 'pa', dir: 'ltr', flag: '🇮🇳', group: 'south-asian' },
   { id: 'ur', label: 'Urdu', html: 'ur', dir: 'rtl', flag: '🇵🇰', group: 'south-asian' },
