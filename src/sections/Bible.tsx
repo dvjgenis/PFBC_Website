@@ -13,6 +13,7 @@ import {
   type BibleVerse,
 } from '../lib/bible'
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { useI18n } from '../i18n/language'
 import './Bible.css'
 
 function useTwoPage() {
@@ -52,6 +53,7 @@ function VerseList({ verses }: { verses: BibleVerse[] }) {
 }
 
 export function Bible() {
+  const { m } = useI18n()
   const reducedMotion = useReducedMotion()
   const twoPage = useTwoPage()
   const sectionRef = useRef<HTMLElement>(null)
@@ -212,26 +214,23 @@ export function Bible() {
   return (
     <section className="section bible-section" id="word" ref={sectionRef}>
       <div className="section-inner">
-        <p className="section-label">The Word of God</p>
-        <h2 className="section-title">Open the Bible</h2>
-        <p className="body-text">
-          New King James Version. All sixty-six books of the Protestant Bible.
-          Turn from the edges, the arrows, or the keyboard.
-        </p>
+        <p className="section-label">{m.bible.label}</p>
+        <h2 className="section-title">{m.bible.title}</h2>
+        <p className="body-text">{m.bible.intro}</p>
 
         <div className="bible-controls">
           <select
             className="bible-select"
             value={book}
             onChange={(e) => handleBookChange(e.target.value as BibleBook)}
-            aria-label="Select book"
+            aria-label={m.bible.book}
           >
-            <optgroup label="Old Testament">
+            <optgroup label={m.bible.old}>
               {OLD_TESTAMENT.map((b) => (
                 <option key={b.name} value={b.name}>{b.name}</option>
               ))}
             </optgroup>
-            <optgroup label="New Testament">
+            <optgroup label={m.bible.new}>
               {NEW_TESTAMENT.map((b) => (
                 <option key={b.name} value={b.name}>{b.name}</option>
               ))}
@@ -243,7 +242,7 @@ export function Bible() {
               className="bible-nav-btn"
               onClick={() => handleChapterChange(chapter - 1)}
               disabled={chapter <= 1 || loading}
-              aria-label="Previous chapter"
+              aria-label={m.bible.prevChapter}
             >
               ‹
             </button>
@@ -251,10 +250,10 @@ export function Bible() {
               className="bible-select bible-select-chapter"
               value={chapter}
               onChange={(e) => handleChapterChange(Number(e.target.value))}
-              aria-label="Select chapter"
+              aria-label={m.bible.chapter}
             >
               {Array.from({ length: maxChapter }, (_, i) => i + 1).map((c) => (
-                <option key={c} value={c}>Chapter {c}</option>
+                <option key={c} value={c}>{m.bible.chapter} {c}</option>
               ))}
             </select>
             <button
@@ -262,7 +261,7 @@ export function Bible() {
               className="bible-nav-btn"
               onClick={() => handleChapterChange(chapter + 1)}
               disabled={chapter >= maxChapter || loading}
-              aria-label="Next chapter"
+              aria-label={m.bible.nextChapter}
             >
               ›
             </button>
@@ -285,7 +284,7 @@ export function Bible() {
                     className="bible-nav-btn"
                     onClick={() => setRetryTick((n) => n + 1)}
                   >
-                    Try again
+                    {m.bible.tryAgain}
                   </button>
                 </div>
               )}
@@ -297,7 +296,7 @@ export function Bible() {
                   >
                     <header className="bible-header">
                       <span className="bible-ref">{book} {chapter}</span>
-                      {loading && <span className="bible-busy">Loading</span>}
+                      {loading && <span className="bible-busy">{m.bible.loading}</span>}
                     </header>
                     <VerseList verses={left} />
                     {!twoPage && (
@@ -327,7 +326,7 @@ export function Bible() {
             className="bible-edge bible-edge-prev"
             onClick={() => goPage(-1)}
             disabled={atStart || loading}
-            aria-label="Previous page"
+            aria-label={m.bible.prevPage}
           >
             <span>‹</span>
           </button>
@@ -336,13 +335,13 @@ export function Bible() {
             className="bible-edge bible-edge-next"
             onClick={() => goPage(1)}
             disabled={atEnd || loading}
-            aria-label="Next page"
+            aria-label={m.bible.nextPage}
           >
             <span>›</span>
           </button>
         </div>
         <p className="bible-hint">
-          {twoPage ? 'Use the page edges or ← → to turn' : 'Swipe or tap the edges to turn'}
+          {twoPage ? m.bible.hintWide : m.bible.hintNarrow}
         </p>
         <p className="bible-credit">{NKJV_CREDIT}</p>
       </div>

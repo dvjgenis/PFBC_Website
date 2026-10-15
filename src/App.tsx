@@ -6,6 +6,7 @@ import '@fontsource/instrument-sans/600.css'
 import '@fontsource/instrument-sans/700.css'
 import '@fontsource/fraunces/400-italic.css'
 
+import { LanguageProvider } from './i18n/language'
 import { LoaderProvider } from './hooks/useLoaderComplete'
 import { Layout } from './components/Layout'
 const Home = lazy(() => import('./pages/Home').then((m) => ({ default: m.Home })))
@@ -18,6 +19,7 @@ const GivePage = lazy(() => import('./pages/GivePage').then((m) => ({ default: m
 
 export default function App() {
   return (
+    <LanguageProvider>
     <LoaderProvider>
       <BrowserRouter>
         <Suspense fallback={null}>
@@ -33,5 +35,6 @@ export default function App() {
         </Suspense>
       </BrowserRouter>
     </LoaderProvider>
+    </LanguageProvider>
   )
 }

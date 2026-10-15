@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
+import { useI18n } from '../i18n/language'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { destroyLenis, getLenis, initLenis, scrollToHash } from '../lib/lenis'
 import { Loader } from './Loader'
@@ -10,6 +11,7 @@ import { Footer } from '../sections/Footer'
 
 export function Layout() {
   const reducedMotion = useReducedMotion()
+  const { m } = useI18n()
   const location = useLocation()
 
   useEffect(() => {
@@ -41,7 +43,7 @@ export function Layout() {
   return (
     <>
       <a href={skipHref} className="skip-link">
-        Skip to content
+        {m.nav.skip}
       </a>
       <Loader />
       <Cursor />

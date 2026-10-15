@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
-import { CHURCH, SCHEDULE } from '../lib/constants'
+import { useI18n } from '../i18n/language'
+import { CHURCH } from '../lib/constants'
 import './Footer.css'
 
 export function Footer() {
+  const { m } = useI18n()
   return (
     <footer className="footer">
       <div className="footer-inner">
@@ -10,25 +12,22 @@ export function Footer() {
           <div>
             <p className="footer-wordmark">{CHURCH.shortName}</p>
             <p className="footer-tagline">
-              An independent, Bible-believing Baptist church in Naperville, in
-              fellowship with the General Association of Regular Baptist Churches.
+              {m.footer.tagline}
             </p>
           </div>
           <div className="footer-col">
-            <h3>Visit</h3>
+            <h3>{m.footer.visit}</h3>
             <p>
               <a href={CHURCH.mapsUrl} target="_blank" rel="noopener noreferrer">
                 {CHURCH.address}
               </a>
             </p>
-            {SCHEDULE.map((item) => (
-              <p key={`${item.label}-${item.title}`}>
-                {item.label}: {item.title} · {item.time}
-              </p>
+            {m.times.map((item) => (
+              <p key={item}>{item}</p>
             ))}
           </div>
           <div className="footer-col">
-            <h3>Contact</h3>
+            <h3>{m.footer.contact}</h3>
             <p>
               <a href={`tel:+1${CHURCH.phone.replace(/\D/g, '')}`}>{CHURCH.phone}</a>
             </p>
@@ -41,24 +40,24 @@ export function Footer() {
               </a>
             </p>
             <p>
-              <Link to="/contact">Write to us</Link>
+              <Link to="/contact">{m.footer.write}</Link>
             </p>
             <p>
-              <Link to="/leadership">Leadership</Link>
+              <Link to="/leadership">{m.footer.leadership}</Link>
             </p>
             <p>
-              <Link to="/faith">Statement of Faith</Link>
+              <Link to="/faith">{m.footer.faith}</Link>
             </p>
             <p>
-              <Link to="/give">Ways to Give</Link>
+              <Link to="/give">{m.footer.give}</Link>
             </p>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} {CHURCH.name}. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} {CHURCH.name}. {m.footer.rights}</span>
           <p className="review-nudge footer-review-nudge">
             <a href={CHURCH.googleReviewUrl} target="_blank" rel="noopener noreferrer">
-              Leave a Google review
+              {m.footer.review}
             </a>
           </p>
           <span>{CHURCH.locationLabel}</span>

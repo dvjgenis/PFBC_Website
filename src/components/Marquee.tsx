@@ -1,11 +1,11 @@
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { useI18n } from '../i18n/language'
 import './Marquee.css'
-
-const PHRASE = 'worship · gospel · discipleship · community · '
 
 export function Marquee() {
   const reducedMotion = useReducedMotion()
-  const repeated = PHRASE.repeat(4)
+  const { m } = useI18n()
+  const repeated = m.marquee.repeat(4)
 
   return (
     <div className="marquee-wrap" aria-hidden="true">

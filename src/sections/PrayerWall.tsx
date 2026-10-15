@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState, type FormEvent } from 'react'
+import { useI18n } from '../i18n/language'
 import { useInView } from '../hooks/useInView'
 import { usePageVisible } from '../hooks/usePageVisible'
 import { isSupabaseConfigured } from '../lib/supabase'
@@ -18,6 +19,7 @@ import './PrayerWall.css'
 export function PrayerWall() {
   const { ref: sectionRef, inView } = useInView<HTMLElement>({ rootMargin: '80px', once: false })
   const pageVisible = usePageVisible()
+  const { m } = useI18n()
   const active = inView && pageVisible
 
   const [stickers, setStickers] = useState<PrayerSticker[]>([])
@@ -26,7 +28,7 @@ export function PrayerWall() {
   const [loading, setLoading] = useState(isSupabaseConfigured)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(
-    isSupabaseConfigured ? null : 'The prayer wall is unavailable right now.',
+    null,
   )
 
   const refresh = useCallback(async () => {
@@ -37,11 +39,11 @@ export function PrayerWall() {
       setError(null)
     } catch (err) {
       if (import.meta.env.DEV) console.error('[PrayerWall]', err)
-      setError('The prayer wall is unavailable right now. Please try again later.')
+      setError(m.prayer.unavailable)
     } finally {
       setLoading(false)
     }
-  }, [])
+  }, [m.prayer.unavailable])
 
   useEffect(() => {
     if (!active || !isSupabaseConfigured) return
@@ -66,7 +68,7 @@ export function PrayerWall() {
       await addSticker(topic)
       await refresh()
     } catch {
-      setError('We could not place that note. Please try again.')
+      setError(m.prayer.placeError)
     } finally {
       setBusy(false)
     }
@@ -79,7 +81,7 @@ export function PrayerWall() {
       await removeSticker(id)
       await refresh()
     } catch {
-      setError('We could not take that note down. Please try again.')
+      setError(m.prayer.removeError)
     } finally {
       setBusy(false)
     }
@@ -96,7 +98,7 @@ export function PrayerWall() {
       setCustomOpen(false)
       await refresh()
     } catch {
-      setError('We could not place that note. Please try again.')
+      setError(m.prayer.placeError)
     } finally {
       setBusy(false)
     }
@@ -105,13 +107,9 @@ export function PrayerWall() {
   return (
     <section className="section prayer-section" id="pray" ref={sectionRef}>
       <div className="section-inner">
-        <p className="section-label">A quiet moment</p>
-        <h2 className="section-title">How can we pray for you today?</h2>
-        <p className="body-text">
-          Choose a note, or write your own. Notes are public — everyone visiting
-          this page can see them. Up to twenty stay on the wall for a day, then
-          they fade.
-        </p>
+        <p className="section-label">{m.prayer.label}</p>
+        <h2 className="section-title">{m.prayer.title}</h2>
+        <p className="body-text">{m.prayer.body}</p>
 
         <div className="prayer-topics">
           {PRAYER_TOPICS.map((topic) => (
@@ -123,7 +121,7 @@ export function PrayerWall() {
               disabled={busy || !isSupabaseConfigured}
               data-cursor="PRAY"
             >
-              {topic.label}
+              {m.prayer.topics[topic.id] ?? topic.label}
             </button>
           ))}
           <button
@@ -135,14 +133,14 @@ export function PrayerWall() {
             aria-controls="prayer-custom-form"
             data-cursor="WRITE"
           >
-            Write a note
+            {m.prayer.write}
           </button>
         </div>
 
         {customOpen && (
           <form id="prayer-custom-form" className="prayer-custom" onSubmit={(e) => void placeCustom(e)}>
             <label className="prayer-custom-label" htmlFor="prayer-custom-input">
-              Your note
+              {m.prayer.yourNote}
             </label>
             <div className="prayer-custom-row">
               <input
@@ -152,7 +150,7 @@ export function PrayerWall() {
                 maxLength={CUSTOM_LIMIT}
                 value={customText}
                 onChange={(e) => setCustomText(e.target.value.slice(0, CUSTOM_LIMIT))}
-                placeholder="A short prayer…"
+                placeholder={m.prayer.placeholder}
                 autoFocus
               />
               <button
@@ -160,21 +158,23 @@ export function PrayerWall() {
                 className="prayer-custom-submit"
                 disabled={busy || !customText.trim()}
               >
-                {busy ? 'Placing…' : 'Place'}
+                {busy ? m.prayer.placing : m.prayer.place}
               </button>
             </div>
             <p className="prayer-custom-count">{customText.length} / {CUSTOM_LIMIT}</p>
           </form>
         )}
 
-        {error && <p className="prayer-status">{error}</p>}
+        {(error || !isSupabaseConfigured) && (
+          <p className="prayer-status">{error ?? m.prayer.unavailable}</p>
+        )}
 
         <div className="prayer-wall" aria-live="polite">
           {loading && stickers.length === 0 && (
-            <p className="prayer-empty">Gathering notes…</p>
+            <p className="prayer-empty">{m.prayer.gathering}</p>
           )}
           {!loading && stickers.length === 0 && (
-            <p className="prayer-empty">The wall is quiet. Leave a note if you like.</p>
+            <p className="prayer-empty">{m.prayer.empty}</p>
           )}
           {stickers.map((sticker) => (
             <button
@@ -189,9 +189,9 @@ export function PrayerWall() {
               onDoubleClick={() => void takeDown(sticker.id)}
               disabled={busy}
               data-cursor="LIFT"
-              aria-label={sticker.label}
+              aria-label={sticker.topicId === 'custom' ? sticker.label : (m.prayer.topics[sticker.topicId] ?? sticker.label)}
             >
-              {sticker.label}
+              {sticker.topicId === 'custom' ? sticker.label : (m.prayer.topics[sticker.topicId] ?? sticker.label)}
             </button>
           ))}
         </div>

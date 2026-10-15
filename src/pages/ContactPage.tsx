@@ -1,22 +1,18 @@
-import { useEffect } from 'react'
+import { useI18n, usePageTitle } from '../i18n/language'
 import { CHURCH } from '../lib/constants'
 import { Contact } from '../sections/Contact'
 import './PageHero.css'
 
 export function ContactPage() {
-  useEffect(() => {
-    document.title = `Contact | ${CHURCH.name}`
-    return () => {
-      document.title = `${CHURCH.name} | ${CHURCH.locationLabel}`
-    }
-  }, [])
+  const { m } = useI18n()
+  usePageTitle(`${m.nav.contact} | ${CHURCH.name}`)
 
   return (
     <>
       <header className="page-hero page-hero-plain">
         <div className="page-hero-content">
-          <p className="section-label">Reach out</p>
-          <h1 className="page-hero-title page-hero-title-ink">Connect With Us</h1>
+          <p className="section-label">{m.contact.heroLabel}</p>
+          <h1 className="page-hero-title page-hero-title-ink">{m.contact.heroTitle}</h1>
         </div>
       </header>
       <Contact />

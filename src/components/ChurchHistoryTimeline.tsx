@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { CHURCH_HISTORY_INTRO, CHURCH_HISTORY_MILESTONES } from '../lib/history'
+import { useI18n } from '../i18n/language'
+import { CHURCH_HISTORY_MILESTONES } from '../lib/history'
 import { TextWithFabcLinks } from './TextWithFabcLinks'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import './ChurchHistoryTimeline.css'
@@ -7,6 +8,7 @@ import './ChurchHistoryTimeline.css'
 const DRAG_THRESHOLD = 4
 
 export function ChurchHistoryTimeline() {
+  const { m } = useI18n()
   const reducedMotion = useReducedMotion()
   const viewportRef = useRef<HTMLDivElement>(null)
   const dragState = useRef({ active: false, moved: false, startX: 0, scrollLeft: 0, pointerId: -1 })
@@ -115,13 +117,13 @@ export function ChurchHistoryTimeline() {
   return (
     <div className="history-timeline">
       <div className="history-timeline-head">
-        <p className="section-label">Our story</p>
-        <h3 className="history-timeline-title">Our History &amp; Milestones</h3>
+        <p className="section-label">{m.history.label}</p>
+        <h3 className="history-timeline-title">{m.history.title}</h3>
         <p className="body-text history-timeline-intro">
-          <TextWithFabcLinks text={CHURCH_HISTORY_INTRO} />
+          <TextWithFabcLinks text={m.history.intro} />
         </p>
         <p className="history-timeline-hint" aria-hidden="true">
-          Drag or scroll to explore
+          {m.history.hint}
           <span className={`history-timeline-hint-arrow ${canScrollRight ? 'is-visible' : ''}`}>→</span>
         </p>
       </div>
@@ -134,7 +136,7 @@ export function ChurchHistoryTimeline() {
           className="history-timeline-viewport"
           data-lenis-prevent
           role="region"
-          aria-label="Church history timeline"
+          aria-label={m.history.region}
           tabIndex={0}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}

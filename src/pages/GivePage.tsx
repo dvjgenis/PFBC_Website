@@ -1,15 +1,11 @@
-import { useEffect } from 'react'
+import { useI18n, usePageTitle } from '../i18n/language'
 import { CHURCH } from '../lib/constants'
 import { Give } from '../sections/Give'
 import './PageHero.css'
 
 export function GivePage() {
-  useEffect(() => {
-    document.title = `Ways to Give | ${CHURCH.name}`
-    return () => {
-      document.title = `${CHURCH.name} | ${CHURCH.locationLabel}`
-    }
-  }, [])
+  const { m } = useI18n()
+  usePageTitle(`${m.give.title} | ${CHURCH.name}`)
 
   return (
     <>
@@ -23,8 +19,8 @@ export function GivePage() {
           <div className="page-hero-overlay" />
         </div>
         <div className="page-hero-content">
-          <p className="section-label page-hero-label">Tithes & offerings</p>
-          <h1 className="page-hero-title">Ways to Give</h1>
+          <p className="section-label page-hero-label">{m.give.label}</p>
+          <h1 className="page-hero-title">{m.give.title}</h1>
         </div>
       </header>
       <Give />

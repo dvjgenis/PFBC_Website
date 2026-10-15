@@ -78,6 +78,15 @@
   color: var(--action);
 }
 
+.visit-fact {
+  margin-top: 1.25rem;
+  max-width: 36rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
 .visit-map-link {
   display: inline-block;
   margin-top: 2rem;

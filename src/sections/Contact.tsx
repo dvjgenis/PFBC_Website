@@ -1,10 +1,12 @@
 import { useRef, useState, type FormEvent } from 'react'
-import { CHURCH, SCHEDULE } from '../lib/constants'
+import { CHURCH } from '../lib/constants'
+import { fill, useI18n } from '../i18n/language'
 import { sendContactMessage } from '../lib/contact'
 import { MagneticButton } from '../components/MagneticButton'
 import './Contact.css'
 
 export function Contact() {
+  const { m } = useI18n()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -49,26 +51,27 @@ export function Contact() {
             />
           </div>
           <div className="pastor-copy">
-            <p className="section-label">Our pastor</p>
+            <p className="section-label">{m.contact.pastorLabel}</p>
             <h2 className="pastor-names">
               {CHURCH.pastor.name}
               <span> &amp; {CHURCH.pastor.spouse}</span>
             </h2>
-            <p className="pastor-role">{CHURCH.pastor.title}</p>
-            <p className="body-text">{CHURCH.pastor.bio}</p>
+            <p className="pastor-role">{m.leadership.roles[CHURCH.pastor.title] ?? CHURCH.pastor.title}</p>
+            <p className="body-text">{m.leadership.bios[0]}</p>
           </div>
         </div>
 
         <p className="body-text">
-          Have questions or want to learn more? Write us and it goes to{' '}
-          <a href={`mailto:${CHURCH.email}`}>{CHURCH.email}</a>.
+          {m.contact.intro.split('{email}')[0]}
+          <a href={`mailto:${CHURCH.email}`}>{CHURCH.email}</a>
+          {m.contact.intro.split('{email}')[1]}
         </p>
         <p className="review-nudge">
-          Visited us on a Sunday?{' '}
+          {m.contact.reviewBefore}{' '}
           <a href={CHURCH.googleReviewUrl} target="_blank" rel="noopener noreferrer">
-            Leave a Google review
+            {m.contact.reviewLink}
           </a>
-          {' '}— it helps others discover our church.
+          {' '}{m.contact.reviewAfter}
         </p>
 
         <div className="contact-grid">
@@ -85,7 +88,7 @@ export function Contact() {
               />
             </div>
             <div className="contact-field">
-              <label htmlFor="contact-name">Name</label>
+              <label htmlFor="contact-name">{m.contact.name}</label>
               <input
                 id="contact-name"
                 type="text"
@@ -96,7 +99,7 @@ export function Contact() {
               />
             </div>
             <div className="contact-field">
-              <label htmlFor="contact-email">Email</label>
+              <label htmlFor="contact-email">{m.contact.email}</label>
               <input
                 id="contact-email"
                 type="email"
@@ -107,7 +110,7 @@ export function Contact() {
               />
             </div>
             <div className="contact-field">
-              <label htmlFor="contact-message">Message</label>
+              <label htmlFor="contact-message">{m.contact.message}</label>
               <textarea
                 id="contact-message"
                 required
@@ -117,38 +120,34 @@ export function Contact() {
             </div>
             {status === 'sent' && (
               <p className="contact-success">
-                Thank you. Your message was sent to {CHURCH.email}.
+                {fill(m.contact.sent, { email: CHURCH.email })}
               </p>
             )}
             {status === 'activate' && (
               <p className="contact-success">
-                Please open {CHURCH.email} and click the one-time “Activate Form”
-                link. After that, messages from this page go straight to that inbox.
+                {fill(m.contact.activate, { email: CHURCH.email })}
               </p>
             )}
             {status === 'mailto' && (
               <p className="contact-success">
-                Your email app should open with a note addressed to{' '}
-                <a href={`mailto:${CHURCH.email}`}>{CHURCH.email}</a>. If it
-                doesn't, write that address directly.
+                {fill(m.contact.mailto, { email: CHURCH.email })}
               </p>
             )}
             {status === 'error' && (
               <p className="contact-success">
-                We couldn't send that just now. Please email{' '}
-                <a href={`mailto:${CHURCH.email}`}>{CHURCH.email}</a>.
+                {fill(m.contact.error, { email: CHURCH.email })}
               </p>
             )}
             {status !== 'sent' && status !== 'activate' && (
               <MagneticButton type="submit" dataCursor="SEND" disabled={status === 'sending'}>
-                {status === 'sending' ? 'Sending…' : 'Send message'}
+                {status === 'sending' ? m.contact.sending : m.contact.send}
               </MagneticButton>
             )}
           </form>
 
           <div className="contact-info">
             <div className="contact-info-block">
-              <h3>Address</h3>
+              <h3>{m.contact.address}</h3>
               <p>
                 <a href={CHURCH.mapsUrl} target="_blank" rel="noopener noreferrer">
                   {CHURCH.address}
@@ -156,23 +155,21 @@ export function Contact() {
               </p>
             </div>
             <div className="contact-info-block">
-              <h3>Times</h3>
-              {SCHEDULE.map((item) => (
-                <p key={`${item.label}-${item.title}`}>
-                  {item.label}: {item.title} · {item.time}
-                </p>
+              <h3>{m.contact.times}</h3>
+              {m.times.map((item) => (
+                <p key={item}>{item}</p>
               ))}
             </div>
             <div className="contact-info-block">
-              <h3>Phone</h3>
+              <h3>{m.contact.phone}</h3>
               <a href={`tel:+1${CHURCH.phone.replace(/\D/g, '')}`}>{CHURCH.phone}</a>
             </div>
             <div className="contact-info-block">
-              <h3>Email</h3>
+              <h3>{m.contact.email}</h3>
               <a href={`mailto:${CHURCH.email}`}>{CHURCH.email}</a>
             </div>
             <div className="contact-info-block">
-              <h3>Facebook</h3>
+              <h3>{m.contact.facebook}</h3>
               <a href={CHURCH.facebook} target="_blank" rel="noopener noreferrer">
                 {CHURCH.facebookLabel}
               </a>

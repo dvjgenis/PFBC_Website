@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useI18n } from '../i18n/language'
+import { LANGUAGES, type LangId } from '../i18n/types'
 import { CHURCH, NAV_LINKS } from '../lib/constants'
-import { gatheringStatusLabel, isGatheringOpen } from '../lib/gatheringHours'
+import { isGatheringOpen } from '../lib/gatheringHours'
 import { getLenis, scrollTo, scrollToHash } from '../lib/lenis'
 import './Nav.css'
 
@@ -13,6 +15,8 @@ export function Nav() {
   const [gatheringOpen, setGatheringOpen] = useState(() => isGatheringOpen())
   const navigate = useNavigate()
   const location = useLocation()
+  const { lang, setLang, m } = useI18n()
+  const navLabels = [m.nav.imNew, m.nav.faith, m.nav.leadership, m.nav.word, m.nav.prayer, m.nav.contact, m.nav.give]
 
   useEffect(() => {
     const update = () => {
@@ -99,14 +103,14 @@ export function Nav() {
           {CHURCH.navWordmark}
         </button>
         <div className="nav-meta">
-          <span className="nav-clock" title={gatheringStatusLabel(gatheringOpen)}>
+          <span className="nav-clock" title={gatheringOpen ? m.hours.open : m.hours.closed}>
             <span
               className={`nav-open-dot${gatheringOpen ? ' is-open' : ''}`}
               aria-hidden
             />
             {CHURCH.city} {time}
             <span className="nav-open-label" aria-live="polite">
-              {gatheringOpen ? 'Open' : 'Closed'}
+              {gatheringOpen ? m.nav.open : m.nav.closed}
             </span>
           </span>
           <button
@@ -117,8 +121,22 @@ export function Nav() {
             aria-expanded={open}
             aria-controls="nav-overlay"
           >
-            Menu
+            {m.nav.menu}
           </button>
+          <label className="nav-lang">
+            <span className="sr-only">{m.nav.language}</span>
+            <select
+              value={lang}
+              aria-label={m.nav.language}
+              onChange={(event) => setLang(event.target.value as LangId)}
+            >
+              {LANGUAGES.map((language) => (
+                <option key={language.id} value={language.id}>
+                  {language.label}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
       </nav>
 
@@ -139,10 +157,10 @@ export function Nav() {
             menuButtonRef.current?.focus()
           }}
         >
-          Close
+          {m.nav.close}
         </button>
         <ul className="nav-links">
-          {NAV_LINKS.map((link) => (
+          {NAV_LINKS.map((link, index) => (
             <li key={link.label}>
               <a
                 href={'hash' in link && link.hash ? `${link.to}${link.hash}` : link.to}
@@ -151,7 +169,7 @@ export function Nav() {
                   handleNav(link.to, 'hash' in link ? link.hash : undefined)
                 }}
               >
-                {link.label}
+                {navLabels[index]}
               </a>
             </li>
           ))}

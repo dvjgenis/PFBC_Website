@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useI18n } from '../i18n/language'
 import { CHURCH } from '../lib/constants'
 import { scrollTo } from '../lib/lenis'
 import { MagneticButton } from '../components/MagneticButton'
@@ -7,6 +8,7 @@ import './Hero.css'
 
 export function Hero() {
   const { complete } = useLoaderComplete()
+  const { m } = useI18n()
   const [loaded, setLoaded] = useState(complete)
 
   useEffect(() => {
@@ -31,11 +33,11 @@ export function Hero() {
       </div>
       <div className="hero-content">
         <p className="hero-meta">
-          {CHURCH.heroMeta}
+          {m.hero.meta}
         </p>
         <div className="hero-line-wrap">
           <h1 className="hero-title">
-            <span className="hero-line">Welcome</span>
+            <span className="hero-line">{m.hero.welcome}</span>
           </h1>
         </div>
         <div className="hero-line-wrap">
@@ -46,7 +48,7 @@ export function Hero() {
             onClick={() => scrollTo('#visit')}
             dataCursor="VISIT"
           >
-            Plan your visit
+            {m.hero.plan}
           </MagneticButton>
         </div>
       </div>
