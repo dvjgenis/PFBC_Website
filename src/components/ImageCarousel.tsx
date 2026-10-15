@@ -1,5 +1,7 @@
-import { useCallback, useEffect, useRef, useState, type TouchEvent } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type TouchEvent } from 'react'
+import { useInView } from '../hooks/useInView'
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { subscribeScrolling } from '../lib/scrollActivity'
 import './ImageCarousel.css'
 
 export type CarouselSlide = {
@@ -14,12 +16,27 @@ type ImageCarouselProps = {
   interval?: number
 }
 
+function neighborIndices(current: number, count: number): Set<number> {
+  if (count <= 1) return new Set([0])
+  const prev = (current - 1 + count) % count
+  const next = (current + 1) % count
+  return new Set([current, prev, next])
+}
+
 export function ImageCarousel({ slides, label, interval = 5200 }: ImageCarouselProps) {
   const reducedMotion = useReducedMotion()
+  const { ref: rootRef, inView } = useInView<HTMLDivElement>({
+    rootMargin: '160px',
+    threshold: 0.01,
+    once: false,
+  })
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
+  const [scrolling, setScrolling] = useState(false)
   const touchStart = useRef<number | null>(null)
   const count = slides.length
+
+  useEffect(() => subscribeScrolling(setScrolling), [])
 
   const go = useCallback(
     (dir: number) => {
@@ -30,15 +47,20 @@ export function ImageCarousel({ slides, label, interval = 5200 }: ImageCarouselP
   )
 
   useEffect(() => {
-    if (reducedMotion || paused || count < 2) return
+    if (reducedMotion || paused || scrolling || count < 2 || !inView) return
     const id = window.setInterval(() => go(1), interval)
     return () => window.clearInterval(id)
-  }, [reducedMotion, paused, count, interval, go])
-
-  if (count === 0) return null
+  }, [reducedMotion, paused, scrolling, count, interval, go, inView])
 
   const safeIndex = count === 0 ? 0 : index % count
   const current = slides[safeIndex]
+  const mountedSlides = useMemo(() => {
+    if (!inView) return new Set<number>()
+    if (scrolling) return new Set([safeIndex])
+    return neighborIndices(safeIndex, count)
+  }, [inView, scrolling, safeIndex, count])
+
+  if (count === 0) return null
 
   const onTouchStart = (e: TouchEvent) => {
     touchStart.current = e.changedTouches[0].clientX
@@ -57,6 +79,7 @@ export function ImageCarousel({ slides, label, interval = 5200 }: ImageCarouselP
 
   return (
     <div
+      ref={rootRef}
       className="image-carousel"
       role="region"
       aria-roledescription="carousel"
@@ -67,17 +90,24 @@ export function ImageCarousel({ slides, label, interval = 5200 }: ImageCarouselP
       onTouchEnd={onTouchEnd}
     >
       <div className="image-carousel-viewport">
-        <div className="image-carousel-slide is-active">
-          <img
-            key={current.src}
-            src={current.src}
-            alt={current.alt}
-            loading="lazy"
-            decoding="async"
-            fetchPriority={safeIndex === 0 ? 'high' : 'low'}
-            style={{ objectPosition: current.position ?? 'center 40%' }}
-          />
-        </div>
+        {slides.map((slide, i) => (
+          <div
+            key={slide.src}
+            className={`image-carousel-slide ${i === safeIndex ? 'is-active' : ''}`}
+            aria-hidden={i !== safeIndex}
+          >
+            {mountedSlides.has(i) && (
+              <img
+                src={slide.src}
+                alt={i === safeIndex ? slide.alt : ''}
+                loading="lazy"
+                decoding="async"
+                fetchPriority={i === safeIndex && inView ? 'auto' : 'low'}
+                style={{ objectPosition: slide.position ?? 'center 40%' }}
+              />
+            )}
+          </div>
+        ))}
       </div>
 
       <p className="visually-hidden" aria-live="polite">

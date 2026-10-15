@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { useI18n } from '../i18n/language'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { destroyLenis, getLenis, initLenis, scrollToHash } from '../lib/lenis'
+import { bindScrollActivity } from '../lib/scrollActivity'
 import { Loader } from './Loader'
 import { Cursor } from './Cursor'
 import { GridOverlay } from './GridOverlay'
@@ -15,6 +16,7 @@ export function Layout() {
   const location = useLocation()
 
   useEffect(() => {
+    bindScrollActivity()
     initLenis(reducedMotion)
     return () => destroyLenis()
   }, [reducedMotion])
