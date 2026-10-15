@@ -272,7 +272,7 @@ export const ko: Messages = {
     label: '우리 이야기',
     title: '우리의 역사와 이정표',
     intro:
-      'Pillar of Faith Baptist Church(PFBC)는 시카고 Fil-American Baptist Church(FABC)의 남서부 교외 전도로 시작되었습니다. 2001년 Romeoville 성경 공부에서 자라, 2003년 FABC가 위임하고 파송한 딸 교회가 되었습니다. 오늘 PFBC는 Kris Paolo Akut 목사의 인도 아래 지역과 해외에서 그 사명을 이어 갑니다.',
+      'Pillar of Faith Baptist Church(PFBC)는 시카고 Fil-American Baptist Church (FABC)의 남서부 교외 전도로 시작되었습니다. 2001년 Romeoville 성경 공부에서 자라, 2003년 FABC가 위임하고 파송한 딸 교회가 되었습니다. 오늘 PFBC는 Kris Paolo Akut 목사의 인도 아래 지역과 해외에서 그 사명을 이어 갑니다.',
     hint: '끌거나 스크롤하여 살펴보세요',
     region: '교회 역사',
   },

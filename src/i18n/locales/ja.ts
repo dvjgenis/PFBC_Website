@@ -263,16 +263,16 @@ export const ja: Messages = {
     assisting: '協力牧師',
     roles: { 'Lead Pastor': '主任牧師', 'Assisting Pastor': '協力牧師' },
     bios: [
-      '彼は主の忠実なしもべであり、フロリダの Pensacola Christian College を卒業しました。そこで神はご自分の目的のために彼を備え、整えられました。2026年2月、主はネーパービルの Pillar of Faith Baptist Church の牧師として仕える神聖な召命を彼に委ね、彼は謙遜と愛と揺るがない信仰をもって会衆を導いています。神からの尊い賜物である妻シェキナと共に歩み、二人の娘、カラとエミに恵まれています。',
-      'ブラッド・ブリセット牧師は、Pillar of Faith Baptist Church の協力牧師として仕えています。',
-      'ルエル・アクト牧師は、Pillar of Faith Baptist Church の協力牧師として仕えています。妻ジョセリンとともに、この教会家族の愛される一員であり続けています。',
+      '彼は主の忠実なしもべであり、Florida の Pensacola Christian College を卒業しました。そこで神はご自分の目的のために彼を備え、整えられました。2026年2月、主は Naperville の Pillar of Faith Baptist Church の牧師として仕える神聖な召命を彼に委ね、彼は謙遜と愛と揺るがない信仰をもって会衆を導いています。神からの尊い賜物である妻 Shekinah と共に歩み、二人の娘、Kara と Emi に恵まれています。',
+      'Brad Blissett 牧師は、Pillar of Faith Baptist Church の協力牧師として仕えています。',
+      'Ruel Akut 牧師は、Pillar of Faith Baptist Church の協力牧師として仕えています。妻 Jocelyn とともに、この教会家族の愛される一員であり続けています。',
     ],
   },
   history: {
     label: '私たちの物語',
     title: '歴史と節目',
     intro:
-      'Pillar of Faith Baptist Church（PFBC）は、シカゴの Fil-American Baptist Church（FABC）による南西部郊外への働きとして始まりました。2001年の Romeoville での聖書研究から成長し、2003年に FABC から委任され、遣わされた娘教会となりました。今日 PFBC は、クリス・パオロ・アクト牧師の指導のもと、地元と海外でその使命を続けています。',
+      'Pillar of Faith Baptist Church (PFBC) は、Chicago の Fil-American Baptist Church (FABC) による南西部郊外への働きとして始まりました。2001年の Romeoville での聖書研究から成長し、2003年に FABC から委任され、遣わされた娘教会となりました。今日 PFBC は、Kris Paolo Akut 牧師の指導のもと、地元と海外でその使命を続けています。',
     hint: 'ドラッグまたはスクロールして見る',
     region: '教会の歴史',
   },

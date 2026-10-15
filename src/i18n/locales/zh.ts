@@ -271,7 +271,7 @@ export const zh: Messages = {
     label: '我们的故事',
     title: '我们的历史与里程碑',
     intro:
-      'Pillar of Faith Baptist Church（PFBC）始于 Fil-American Baptist Church（FABC）在芝加哥西南郊的外展：2001 年在 Romeoville 的查经，到 2003 年成长为 FABC 差派并委任的子会。今天，PFBC 在 Kris Paolo Akut 牧师的带领下，在本地和海外继续这使命。',
+      'Pillar of Faith Baptist Church（PFBC）始于 Fil-American Baptist Church (FABC)在芝加哥西南郊的外展：2001 年在 Romeoville 的查经，到 2003 年成长为 FABC 差派并委任的子会。今天，PFBC 在 Kris Paolo Akut 牧师的带领下，在本地和海外继续这使命。',
     hint: '拖动或滚动来浏览',
     region: '教会历史',
   },
