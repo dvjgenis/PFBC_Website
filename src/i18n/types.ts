@@ -69,6 +69,13 @@ export type Messages = {
   }
   faith: { label: string; title: string; lead: string; read: string; points: Titled[] }
   life: { label: string; title: string; body: string; items: Titled[] }
+  missions: {
+    label: string
+    title: string
+    body: string
+    withSpouse: string
+    countries: Record<string, string>
+  }
   bible: {
     label: string
     title: string

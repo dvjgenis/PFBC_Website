@@ -278,6 +278,19 @@ const en: Messages = {
     hint: 'Drag or scroll to explore',
     region: 'Church history',
   },
+  missions: {
+    label: 'Sent and supported',
+    title: 'Partners in Missions',
+    body: 'These are the workers and ministries we walk with. Choose a name to find their country on the map.',
+    withSpouse: 'With {name}',
+    countries: {
+      Philippines: 'Philippines',
+      'United States': 'United States',
+      'Hong Kong': 'Hong Kong',
+      Malaysia: 'Malaysia',
+      USA: 'USA',
+    },
+  },
   marquee: 'worship · gospel · discipleship · community · ',
 }
 
@@ -355,7 +368,7 @@ const tl: Messages = {
     copy: 'Kopyahin ang address',
     copied: 'Nakopya',
     envelopeLabel: 'Sa personal',
-    envelopeTitle: 'Offering envelope',
+    envelopeTitle: 'Sobre ng handog',
     envelopeBody: 'Ilagay ang ikapu o handog sa offering envelope ng church at ibigay ito sa pagsamba tuwing Linggo.',
   },
   about: {
@@ -458,8 +471,8 @@ const tl: Messages = {
       { title: 'Pagtitipon tuwing Linggo', text: 'Nagtitipon kami tuwing Araw ng Panginoon upang sumamba, manalangin, at marinig ang Salitang ipinangangaral.' },
       { title: 'Mga bata at kabataan', text: 'Mula VBS hanggang Sunday School — inilalaan namin ang susunod na henerasyon ng mga mananampalataya.' },
       { title: 'Ministeryo ng musika', text: 'Mga tinig at instrumento na nag-aangat ng papuri — sa mga natatanging panahon at tuwing Linggo.' },
-      { title: 'Outreach', text: 'Paglilingkod sa mga kapitbahay sa nursing home at sa komunidad sa labas ng aming mga pader.' },
-      { title: 'Fellowship', text: 'Mga pagkain, anibersaryo, at buhay na magkasama — dahil ang church ay pamilya.' },
+      { title: 'Pag-abot', text: 'Paglilingkod sa mga kapitbahay sa nursing home at sa komunidad sa labas ng aming mga pader.' },
+      { title: 'Pakikisama', text: 'Mga pagkain, anibersaryo, at buhay na magkasama — dahil ang church ay pamilya.' },
       { title: 'Komunidad', text: 'Maraming henerasyon, maraming kultura, at laging bukas.' },
     ],
   },
@@ -527,7 +540,7 @@ const tl: Messages = {
     mailto:
       'Dapat bumukas ang email app mo na may note para sa {email}. Kung hindi, sulatan nang direkta ang address na iyon.',
     error: 'Hindi namin maipadala iyon ngayon. Pakisulat sa {email}.',
-    address: 'Address',
+    address: 'Tirahan',
     times: 'Mga oras',
     phone: 'Telepono',
   },
@@ -549,8 +562,8 @@ const tl: Messages = {
     heroLabel: 'Mga pastol',
     title: 'Pamunuan',
     lead: 'Kilalanin ang mga pastol na nangunguna sa Pillar of Faith Baptist Church — at ang mga pastor na naglilingkod sa pamilyang ito.',
-    assisting: 'Mga assisting pastor',
-    roles: { 'Lead Pastor': 'Lead Pastor', 'Assisting Pastor': 'Assisting Pastor' },
+    assisting: 'Mga katulong na pastor',
+    roles: { 'Lead Pastor': 'Punong Pastor', 'Assisting Pastor': 'Katulong na Pastor' },
     bios: [
       'Siya ay tapat na lingkod ng Panginoon, nagtapos sa Pensacola Christian College, Florida, kung saan siya ay inihanda ng Diyos para sa Kanyang layunin. Noong Pebrero 2026, ipinagkatiwala sa kanya ng Panginoon ang sagradong tawag na maging pastor ng Pillar of Faith Baptist Church sa Naperville, pinamumunuan ang kongregasyon nang may kababaang-loob, pag-ibig, at di-natitinag na pananampalataya. Kasama ang kanyang asawang si Shekinah, isang mahalagang kaloob mula sa Diyos, pinagpala siya ng dalawang anak na babae, sina Kara at Emi.',
       'Si Pastor Brad Blissett ay naglilingkod sa Pillar of Faith Baptist Church bilang Assisting Pastor.',
@@ -564,6 +577,19 @@ const tl: Messages = {
       'Nagsimula ang Pillar of Faith Baptist Church (PFBC) bilang outreach ng Fil-American Baptist Church (FABC) sa mga suburb sa timog-kanluran ng Chicago—mula sa Bible study sa Romeoville noong 2001 hanggang maging isang daughter church na kinomisyon at ipinadala ng FABC noong 2003. Ngayon ay ipinagpapatuloy ng PFBC ang misyong iyon dito at sa ibang bayan, sa pamumuno ni Pastor Kris Paolo Akut.',
     hint: 'I-drag o i-scroll upang tuklasin',
     region: 'Kasaysayan ng church',
+  },
+  missions: {
+    label: 'Sinugo at sinusuportahan',
+    title: 'Mga kasama sa misyon',
+    body: 'Ito ang mga manggagawa at ministeryong kasama naming lumalakad. Pumili ng pangalan upang mahanap ang kanilang bansa sa mapa.',
+    withSpouse: 'Kasama si {name}',
+    countries: {
+      Philippines: 'Pilipinas',
+      'United States': 'Estados Unidos',
+      'Hong Kong': 'Hong Kong',
+      Malaysia: 'Malaysia',
+      USA: 'Estados Unidos',
+    },
   },
   marquee: 'pagsamba · ebanghelyo · disipulado · komunidad · ',
 }
@@ -680,6 +706,10 @@ const ceb: Messages = {
       'Ang dedikasyon sa bata girekomendar sa mga ginikanan nga magtutuo (dili giila nga ordinansa).',
     ],
     affiliationsTitle: 'Mga kauban',
+    affiliations: [
+      'Kauban sa General Association of Regular Baptist Churches (GARBC)',
+      'Miyembro sa Illinois-Missouri Association of Regular Baptist Churches (IL-MO ARBC)',
+    ],
   },
   faith: {
     label: 'Ang among gituohan',
@@ -742,8 +772,8 @@ const ceb: Messages = {
       { title: 'Pagtigom sa Dominggo', text: 'Magtigom kami kada Adlaw sa Ginoo aron mosimba, moampo, ug mamati sa Pulong nga giwali.' },
       { title: 'Mga bata ug kabatan-onan', text: 'Gikan sa VBS hangtod sa Sunday School — among giatiman ang sunod nga henerasyon sa mga magtutuo.' },
       { title: 'Ministeryo sa musika', text: 'Mga tingog ug instrumento nga nagabayaw sa pagdayeg — sa mga espesyal nga panahon ug kada Dominggo.' },
-      { title: 'Outreach', text: 'Nag-alagad sa among mga silingan sa mga nursing home ug sa komunidad gawas sa among mga bungbong.' },
-      { title: 'Fellowship', text: 'Mga pagkaon, anibersaryo, ug kinabuhi nga magkauban — kay ang church pamilya.' },
+      { title: 'Pag-abot', text: 'Nag-alagad sa among mga silingan sa mga nursing home ug sa komunidad gawas sa among mga bungbong.' },
+      { title: 'Panag-uban', text: 'Mga pagkaon, anibersaryo, ug kinabuhi nga magkauban — kay ang church pamilya.' },
       { title: 'Komunidad', text: 'Daghang henerasyon, daghang kultura, ug kanunay nga abli.' },
     ],
   },
@@ -810,7 +840,7 @@ const ceb: Messages = {
     mailto:
       'Angay nga moabli ang imong email app nga adunay note alang sa {email}. Kung dili, sulati direkta ang maong address.',
     error: 'Wala namo mapadala kana karon. Palihug email sa {email}.',
-    address: 'Address',
+    address: 'Puluy-anan',
     times: 'Mga oras',
     phone: 'Telepono',
   },
@@ -832,7 +862,8 @@ const ceb: Messages = {
     heroLabel: 'Mga magbalantay',
     title: 'Pagpangulo',
     lead: 'Ilha ang mga magbalantay nga nangulo sa Pillar of Faith Baptist Church — ug ang mga pastor nga nag-alagad niini nga pamilya.',
-    assisting: 'Mga assisting pastor',
+    assisting: 'Mga katabang nga pastor',
+    roles: { 'Lead Pastor': 'Ulo nga Pastor', 'Assisting Pastor': 'Katabang nga Pastor' },
     bios: [
       'Siya usa ka matinud-anon nga alagad sa Ginoo, gradwado sa Pensacola Christian College, Florida, diin siya giandam sa Diyos alang sa Iyang katuyoan. Niadtong Pebrero 2026, gisalig kaniya sa Ginoo ang sagrado nga tawag nga mahimong pastor sa Pillar of Faith Baptist Church sa Naperville, nangulo sa kongregasyon sa pagpaubos, gugma, ug lig-on nga pagtuo. Uban sa iyang asawa nga si Shekinah, usa ka hamili nga gasa gikan sa Diyos, gipanalanginan siya ug duha ka anak nga babaye, sila si Kara ug Emi.',
       'Si Pastor Brad Blissett nag-alagad sa Pillar of Faith Baptist Church isip Assisting Pastor.',
@@ -846,6 +877,19 @@ const ceb: Messages = {
       'Nagsugod ang Pillar of Faith Baptist Church (PFBC) isip outreach sa Fil-American Baptist Church (FABC) sa habagatang-kasadpang mga suburb sa Chicago—gikan sa Bible study sa Romeoville niadtong 2001 hangtod nahimong daughter church nga gikomisyon ug gipadala sa FABC niadtong 2003. Karon gipadayon sa PFBC kana nga misyon dinhi ug sa laing dapit, ubos sa pagpangulo ni Pastor Kris Paolo Akut.',
     hint: 'I-drag o i-scroll aron susihon',
     region: 'Kasaysayan sa church',
+  },
+  missions: {
+    label: 'Gipadala ug gisuportahan',
+    title: 'Mga kauban sa misyon',
+    body: 'Mao kini ang mga magbubuhat ug ministeryo nga among kauban. Pilia ang ngalan aron makit-an ang ilang nasud sa mapa.',
+    withSpouse: 'Kauban si {name}',
+    countries: {
+      Philippines: 'Pilipinas',
+      'United States': 'Estados Unidos',
+      'Hong Kong': 'Hong Kong',
+      Malaysia: 'Malaysia',
+      USA: 'Estados Unidos',
+    },
   },
   marquee: 'pagsimba · ebanghelyo · pagdisipulo · komunidad · ',
 }
@@ -919,7 +963,77 @@ const hil: Messages = {
       'Sa Zelle, ipadala ang ikapulo ukon halad sa address sa idalom. Butangi sang malip-ot nga note pareho sang “Tithe” ukon “Offering.” Amo ini ang Zelle address sang church, separado sa email sang opisina.',
     copy: 'Kopyaha ang address',
     copied: 'Nakopya',
+    envelopeTitle: 'Sobre sang halad',
     envelopeBody: 'Ibutang ang ikapulo ukon halad sa offering envelope sang church kag ihatag ini sa pagsimba kada Domingo.',
+  },
+  about: {
+    label: 'Sin-o kami',
+    title: 'Bahin',
+    tagline:
+      'Kami isa ka mainit kag abli nga komunidad sang mga magtutuo, nahatag sa pagpaambit sang gugma sang Dios, pagdaku sa pagtuo, kag pag-alagad sa amon komunidad.',
+    missions: [
+      {
+        title: 'Pagsimba kag mga ordinansa',
+        text: 'Sa pagsimba sa Dios nga magkaupod subong isa ka lawas sang mga magtutuo kag sa matinumanon nga pagsunod sa mga ordinansa nga ginsugo ni Jesucristo.',
+      },
+      {
+        title: 'Ipahayag ang Ebanghelyo',
+        text: 'Sa maisog nga pagpaambit sang Ebanghelyo ni Cristo—ang gahom sang Dios sa kaluwasan sang tanan nga magtuo—sa tion kag indi sa tion (Roma 1:16; 2 Timoteo 4:2).',
+      },
+      {
+        title: 'Pagdisipulo kag edukasyon',
+        text: 'Sa pagtudlo sang tanan nga henerasyon, bata kag tigulang, sa bug-os nga laygay sang Dios, agod maggiya sa ila pagtuo kag adlaw-adlaw nga kabuhi (Binuhatan 20:27).',
+      },
+      {
+        title: 'Ang Dakong Sugo',
+        text: 'Sa pagtuman sang Dakong Sugo sang aton Ginoo, pagdala sang iya pulong sa aton komunidad kag tubtob sa kinatumyan sang duta (Mateo 28:19-20; Binuhatan 1:8).',
+      },
+      {
+        title: 'Komunidad kag ministeryo',
+        text: 'Sa pagtukod kag pagpadayon sang mga ministeryo kag institusyon nga kinahanglan agod matuman ang aton tawag kag makaalagad sa iban.',
+      },
+    ],
+    ordinancesTitle: 'Mga ordinansa',
+    ordinances: [
+      'Bawtismo paagi sa pagtuslob, ginahatag sa mga magtutuo.',
+      'Ang Panihapon sang Ginoo sa katapusan nga Domingo sang kada bulan, ukon sa tion nga itakda sang Pastor ukon sang Board of Deacons.',
+      'Ang dedikasyon sang bata ginarekomendar sa mga ginikanan nga magtutuo (indi ginakilala nga ordinansa).',
+    ],
+    affiliationsTitle: 'Mga kaupod',
+    affiliations: [
+      'Kaisa sang General Association of Regular Baptist Churches (GARBC)',
+      'Miyembro sang Illinois-Missouri Association of Regular Baptist Churches (IL-MO ARBC)',
+    ],
+  },
+  life: {
+    label: 'Kabuhi nga magkaupod',
+    title: 'Ang amon komunidad',
+    body: 'Halin sa pagsimba tubtob sa pag-abot, halin sa mga bata tubtob sa mga tigulang — kag ang mga misyonero nga amon ginapadala kag ginasuportahan. Amo ini ang kabuhi sa PFBC.',
+    items: [
+      { title: 'Pagtigom kada Domingo', text: 'Magtigom kami kada Adlaw sang Ginoo agod magsimba, magpangamuyo, kag magpamati sa Pulong nga ginwali.' },
+      { title: 'Mga bata kag kabataan', text: 'Halin sa VBS tubtob sa Sunday School — amon ginatamod ang masunod nga henerasyon sang mga magtutuo.' },
+      { title: 'Ministeryo sang musika', text: 'Mga tingog kag instrumento nga nagabayaw sang pagdayaw — sa mga pinasahi nga tion kag kada Domingo.' },
+      { title: 'Pag-abot', text: 'Nag-alagad sa amon mga katupad sa mga nursing home kag sa komunidad sa guwa sang amon mga pader.' },
+      { title: 'Pag-ulupod', text: 'Mga pagkaon, anibersaryo, kag kabuhi nga magkaupod — kay ang church pamilya.' },
+      { title: 'Komunidad', text: 'Madamo nga henerasyon, madamo nga kultura, kag pirme nga abli.' },
+    ],
+  },
+  bible: {
+    label: 'Ang Pulong sang Dios',
+    title: 'Buksan ang Biblia',
+    intro: 'New King James Version, sa Ingles. Ang tanan nga kan-uman kag anom ka libro sang Protestante nga Biblia. I-turn halin sa kilid, sa mga udyong, ukon sa keyboard.',
+    old: 'Daan nga Katipan',
+    new: 'Bag-o nga Katipan',
+    book: 'Pilia ang libro',
+    chapter: 'Kapitulo',
+    prevChapter: 'Nagligad nga kapitulo',
+    nextChapter: 'Sunod nga kapitulo',
+    prevPage: 'Nagligad nga panid',
+    nextPage: 'Sunod nga panid',
+    loading: 'Nagakarga',
+    tryAgain: 'Tilawi liwat',
+    hintWide: 'Gamiton ang kilid sang panid ukon ang ← → agod i-turn',
+    hintNarrow: 'I-swipe ukon i-tap ang kilid agod i-turn',
   },
   faith: {
     label: 'Ang amon ginatuohan',
@@ -1013,8 +1127,14 @@ const hil: Messages = {
   leadership: {
     ...ceb.leadership,
     title: 'Pagpamuno',
-    assisting: 'Mga assisting pastor',
+    assisting: 'Mga katabang nga pastor',
+    roles: { 'Lead Pastor': 'Ulo nga Pastor', 'Assisting Pastor': 'Katabang nga Pastor' },
     lead: 'Kilalaha ang mga magbalantay nga nagapamuno sa Pillar of Faith Baptist Church — kag ang mga pastor nga nag-alagad sa sini nga pamilya.',
+    bios: [
+      'Siya isa ka matinumanon nga alagad sang Ginoo, gradwado sang Pensacola Christian College, Florida, diin ginhanda siya sang Dios para sa Iya katuyuan. Sang Pebrero 2026, ginsalig sa iya sang Ginoo ang sagrado nga tawag nga mangin pastor sang Pillar of Faith Baptist Church sa Naperville, nga nagapamuno sa kongregasyon sa pagpaubos, gugma, kag malig-on nga pagtuo. Kaupod ang iya asawa nga si Shekinah, isa ka hamili nga regalo halin sa Dios, ginpakamaayo siya sang duha ka anak nga babayi, sila si Kara kag Emi.',
+      'Si Pastor Brad Blissett nag-alagad sa Pillar of Faith Baptist Church subong Katabang nga Pastor.',
+      'Si Pastor Ruel Akut nag-alagad subong Katabang nga Pastor sa Pillar of Faith Baptist Church. Siya kag ang iya asawa nga si Jocelyn nagapabilin nga pinalangga nga bahin sini nga pamilya sang church.',
+    ],
   },
   history: {
     ...ceb.history,
@@ -1024,7 +1144,20 @@ const hil: Messages = {
       'Nagsugod ang Pillar of Faith Baptist Church (PFBC) bilang outreach sang Fil-American Baptist Church (FABC) sa habagatan-katundan nga mga suburb sang Chicago—halin sa Bible study sa Romeoville sang 2001 tubtob nangin daughter church nga ginkomisyon kag ginpadala sang FABC sang 2003. Subong ginapadayon sang PFBC ina nga misyon diri kag sa iban nga lugar, sa idalom sang pagpamuno ni Pastor Kris Paolo Akut.',
     hint: 'I-drag ukon i-scroll agod usisaon',
   },
-  marquee: 'pagsimba · ebanghelyo · pagdisipulo · komunidad · ',
+  missions: {
+    label: 'Ginpadala kag ginasuportahan',
+    title: 'Mga kaupod sa misyon',
+    body: 'Amo ini ang mga manug-obra kag mga ministeryo nga amon kaupod. Pilia ang ngalan agod makita ang ila pungsod sa mapa.',
+    withSpouse: 'Kaupod si {name}',
+    countries: {
+      Philippines: 'Pilipinas',
+      'United States': 'Estados Unidos',
+      'Hong Kong': 'Hong Kong',
+      Malaysia: 'Malaysia',
+      USA: 'Estados Unidos',
+    },
+  },
+  marquee: 'pagsimba · ebanghelyo · pagdisipulo · katilingban · ',
 }
 
 const ilo: Messages = {
@@ -1101,7 +1234,7 @@ const ilo: Messages = {
     copy: 'Kopiaen ti address',
     copied: 'Nakopia',
     envelopeLabel: 'Iti mismo',
-    envelopeTitle: 'Offering envelope',
+    envelopeTitle: 'Sobre ti daton',
     envelopeBody: 'Ikabil ti ikapullo wenno daton iti offering envelope ti church ket ited daytoy iti panagdaydayaw iti Domingo.',
   },
   about: {
@@ -1110,6 +1243,28 @@ const ilo: Messages = {
     title: 'Maipapan',
     tagline:
       'Datayo ket nabara ken narang-ay a komunidad dagiti mamati, naipaay a mangibingay iti ayat ti Dios, agdakkel iti pammati, ken agserbi iti komunidad tayo.',
+    missions: [
+      {
+        title: 'Panagdaydayaw ken dagiti ordinansa',
+        text: 'Agdaydayaw iti Dios a sangsangkamaysa a kas maysa a bagi dagiti mamati ken sipapasnek a tungpalen dagiti ordinansa nga imbilin ni Jesucristo.',
+      },
+      {
+        title: 'Ipakaammo ti Ebanghelio',
+        text: 'Sibibibileg nga ibingay ti Ebanghelio ni Cristo—ti pannakabalin ti Dios iti pannakaisalakan ti tunggal agtalek—iti tiempo ken saan a tiempo (Roma 1:16; 2 Timoteo 4:2).',
+      },
+      {
+        title: 'Panagdisipulo ken edukasion',
+        text: 'Isuro amin a henerasion, ubbing ken nataengan, iti intero a balakad ti Dios, tapno idalan ti pammati ken inaldaw a panagbiagda (Aramid 20:27).',
+      },
+      {
+        title: 'Ti Naindaklan a Bilin',
+        text: 'Tungpalen ti Naindaklan a Bilin ti Apotayo, iywaragwag ti Saona iti lokal a komunidad ken agingga kadagiti pungto ti daga (Mateo 28:19-20; Aramid 1:8).',
+      },
+      {
+        title: 'Komunidad ken ministerio',
+        text: 'Mangbangon, mangtaripato, ken mangpataray kadagiti ministerio ken institusion a masapul tapno matungpal ti awagtayo ken agserbi kadagiti sabsabali.',
+      },
+    ],
     ordinancesTitle: 'Dagiti ordinansa',
     ordinances: [
       'Bautismo babaen ti panaglusob, maited kadagiti mamati.',
@@ -1182,8 +1337,8 @@ const ilo: Messages = {
       { title: 'Panagtitipon iti Domingo', text: 'Agtitipon kami iti Aldaw ti Apo tapno agdaydayaw, agkararag, ken dumngeg iti naisawang a Sao.' },
       { title: 'Ubbing ken agtutubo', text: 'Manipud VBS agingga iti Sunday School — ipaay mi ti sumaruno a henerasion dagiti mamati.' },
       { title: 'Ministerio ti musika', text: 'Dagiti timek ken instrumento a mangitag-ay iti dayaw — kadagiti naipangruna a tiempo ken iti tunggal Domingo.' },
-      { title: 'Outreach', text: 'Agserbi kadagiti kaarruba kadagiti nursing home ken iti komunidad iti ruar dagiti diding tayo.' },
-      { title: 'Fellowship', text: 'Dagiti taraon, anibersario, ken biag nga agkakauban — gapu ta ti church ket pamilia.' },
+      { title: 'Panagserbi', text: 'Agserbi kadagiti kaarruba kadagiti nursing home ken iti komunidad iti ruar dagiti diding tayo.' },
+      { title: 'Panagkakadua', text: 'Dagiti taraon, anibersario, ken biag nga agkakauban — gapu ta ti church ket pamilia.' },
       { title: 'Komunidad', text: 'Adu a henerasion, adu a kultura, ken kanayon a narang-ay.' },
     ],
   },
@@ -1250,7 +1405,7 @@ const ilo: Messages = {
     mailto:
       'Rumbeng a lumukat ti email app mo nga addaan iti note para iti {email}. No saan, suratem a direkta dayta nga address.',
     error: 'Saan mi a naipatulod dayta ita. Pangngaasi nga i-email ti {email}.',
-    address: 'Address',
+    address: 'Pagtaengan',
     times: 'Oras',
     phone: 'Telepono',
   },
@@ -1272,7 +1427,8 @@ const ilo: Messages = {
     heroLabel: 'Dagiti pastor',
     title: 'Panangidaulo',
     lead: 'Ammuen dagiti agaywan a mangidaulo iti Pillar of Faith Baptist Church — ken dagiti pastor nga agserbi iti daytoy a pamilia.',
-    assisting: 'Dagiti assisting pastor',
+    assisting: 'Dagiti katulong a pastor',
+    roles: { 'Lead Pastor': 'Ulo a Pastor', 'Assisting Pastor': 'Katulong a Pastor' },
     bios: [
       'Isu ket natalek nga adipen ti Apo, graduado ti Pensacola Christian College, Florida, nga idiay insagana ken inyuneg ti Dios para iti panggepna. Idi Pebrero 2026, intalek ti Apo kenkuana ti nasagradoan a panangayab a pastor ti Pillar of Faith Baptist Church idiay Naperville, mangidaulo iti kongregasion iti kinapakumbaba, ayat, ken di-magungon a pammati. Kadua ti asawana a Shekinah, napateg a sagut manipud iti Dios, nabendisionan kadagiti dua a balasang, da Kara ken Emi.',
       'Ni Pastor Brad Blissett agserbi iti Pillar of Faith Baptist Church a kas Assisting Pastor.',
@@ -1286,6 +1442,19 @@ const ilo: Messages = {
       'Nangrugi ti Pillar of Faith Baptist Church (PFBC) a kas outreach ti Fil-American Baptist Church (FABC) kadagiti abagatan-laud a suburb ti Chicago—nangrugi iti Bible study idiay Romeoville idi 2001 ken dimmakkel a daughter church a kinomision ken imbaon ti FABC idi 2003. Ita itultuloy ti PFBC dayta a misyon ditoy ken iti sabali a lugar, iti babaen ti panangidaulo ni Pastor Kris Paolo Akut.',
     hint: 'I-drag wenno i-scroll tapno sukimaten',
     region: 'Pakasaritaan ti church',
+  },
+  missions: {
+    label: 'Naibaon ken nasuportaran',
+    title: 'Kadua iti misyon',
+    body: 'Dagitoy dagiti trabahador ken ministerio a kaduatayo. Pilien ti nagan tapno masarakan ti pagilianda iti mapa.',
+    withSpouse: 'Kadua ni {name}',
+    countries: {
+      Philippines: 'Pilipinas',
+      'United States': 'Estados Unidos',
+      'Hong Kong': 'Hong Kong',
+      Malaysia: 'Malaysia',
+      USA: 'Estados Unidos',
+    },
   },
   marquee: 'panagdaydayaw · ebanghelio · panagdisipulo · komunidad · ',
 }
@@ -1573,6 +1742,19 @@ const es: Messages = {
       'Pillar of Faith Baptist Church (PFBC) comenzó como el alcance de Fil-American Baptist Church (FABC) en los suburbios del suroeste de Chicago: un estudio bíblico en Romeoville en 2001 que creció hasta ser una iglesia hija comisionada y enviada por FABC en 2003. Hoy PFBC continúa esa misión aquí y en otros lugares, bajo el liderazgo del pastor Kris Paolo Akut.',
     hint: 'Arrastre o desplácese para explorar',
     region: 'Historia de la iglesia',
+  },
+  missions: {
+    label: 'Enviados y sostenidos',
+    title: 'Compañeros en misiones',
+    body: 'Estos son los obreros y ministerios con quienes caminamos. Elija un nombre para encontrar su país en el mapa.',
+    withSpouse: 'Con {name}',
+    countries: {
+      Philippines: 'Filipinas',
+      'United States': 'Estados Unidos',
+      'Hong Kong': 'Hong Kong',
+      Malaysia: 'Malasia',
+      USA: 'Estados Unidos',
+    },
   },
   marquee: 'adoración · evangelio · discipulado · comunidad · ',
 }

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { historyEvent } from '../i18n/historyEvents'
 import { useI18n } from '../i18n/language'
 import { CHURCH_HISTORY_MILESTONES } from '../lib/history'
 import { TextWithFabcLinks } from './TextWithFabcLinks'
@@ -8,7 +9,7 @@ import './ChurchHistoryTimeline.css'
 const DRAG_THRESHOLD = 4
 
 export function ChurchHistoryTimeline() {
-  const { m } = useI18n()
+  const { lang, m } = useI18n()
   const reducedMotion = useReducedMotion()
   const viewportRef = useRef<HTMLDivElement>(null)
   const dragState = useRef({ active: false, moved: false, startX: 0, scrollLeft: 0, pointerId: -1 })
@@ -146,17 +147,19 @@ export function ChurchHistoryTimeline() {
           onWheel={onWheel}
         >
           <ol className="history-timeline-track">
-            {CHURCH_HISTORY_MILESTONES.map((milestone, index) => (
+            {CHURCH_HISTORY_MILESTONES.map((milestone, index) => {
+              const event = historyEvent(lang, index, milestone)
+              return (
               <li
-                key={`${milestone.date}-${milestone.text}`}
+                key={`${milestone.year}-${index}`}
                 className={`history-milestone ${index % 2 === 0 ? 'is-above' : 'is-below'} ${milestone.year >= 2026 ? 'is-recent' : ''}`}
               >
                 <article className="history-milestone-card">
                   <time className="history-milestone-date" dateTime={String(milestone.year)}>
-                    {milestone.date}
+                    {event.date}
                   </time>
                   <p className="history-milestone-text">
-                    <TextWithFabcLinks text={milestone.text} />
+                    <TextWithFabcLinks text={event.text} />
                   </p>
                 </article>
                 <span className="history-milestone-node" aria-hidden="true" />
@@ -164,7 +167,8 @@ export function ChurchHistoryTimeline() {
                   {milestone.year}
                 </span>
               </li>
-            ))}
+              )
+            })}
           </ol>
         </div>
       </div>

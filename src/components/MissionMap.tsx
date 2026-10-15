@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import L from 'leaflet'
 import { useInView } from '../hooks/useInView'
+import { fill, useI18n } from '../i18n/language'
 import { MISSIONS, missionName, type Mission } from '../lib/missions'
 import { getLenis } from '../lib/lenis'
 import 'leaflet/dist/leaflet.css'
@@ -18,6 +19,12 @@ function countryPoints(missions: Mission[]): Record<string, [number, number]> {
   return points
 }
 
+function localizePlace(text: string, countries: Record<string, string>) {
+  return Object.entries(countries)
+    .sort((a, b) => b[0].length - a[0].length)
+    .reduce((out, [from, to]) => out.split(from).join(to), text)
+}
+
 function makePin(active: boolean) {
   return L.divIcon({
     className: `mission-pin${active ? ' is-active' : ''}`,
@@ -29,6 +36,7 @@ function makePin(active: boolean) {
 }
 
 export function MissionMap() {
+  const { m } = useI18n()
   const { ref: mapSectionRef, inView } = useInView<HTMLDivElement>({ rootMargin: '280px' })
   const frameRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<L.Map | null>(null)
@@ -63,7 +71,7 @@ export function MissionMap() {
     const bounds = L.latLngBounds([])
     for (const [country, latlng] of Object.entries(points)) {
       bounds.extend(latlng)
-      const marker = L.marker(latlng, { icon: makePin(false), title: country })
+      const marker = L.marker(latlng, { icon: makePin(false), title: m.missions.countries[country] ?? country })
         .addTo(map)
         .on('click', () => {
           resumePageScroll()
@@ -91,16 +99,22 @@ export function MissionMap() {
       mapRef.current = null
       markersRef.current = {}
     }
-  }, [points, inView])
+  }, [points, inView, m.missions.countries])
 
   useEffect(() => {
     for (const country of Object.keys(points)) {
-      markersRef.current[country]?.setIcon(makePin(country === activeCountry))
+      const marker = markersRef.current[country]
+      marker?.setIcon(makePin(country === activeCountry))
+      const label = m.missions.countries[country] ?? country
+      if (marker) {
+        marker.options.title = label
+        marker.getElement()?.setAttribute('title', label)
+      }
     }
     if (!activeCountry || !mapRef.current) return
     const latlng = points[activeCountry]
     mapRef.current.flyTo(latlng, 4, { duration: 0.7 })
-  }, [activeCountry, points])
+  }, [activeCountry, points, m.missions.countries])
 
   const focus = (mission: Mission) => {
     resumePageScroll()
@@ -110,12 +124,9 @@ export function MissionMap() {
   return (
     <div className="missions" id="missions" ref={mapSectionRef}>
       <div className="missions-copy">
-        <p className="section-label">Sent and supported</p>
-        <h3 className="missions-title">Partners in Missions</h3>
-        <p className="body-text">
-          These are the workers and ministries we walk with. Choose a name to
-          find their country on the map.
-        </p>
+        <p className="section-label">{m.missions.label}</p>
+        <h3 className="missions-title">{m.missions.title}</h3>
+        <p className="body-text">{m.missions.body}</p>
       </div>
 
       <div className="missions-layout">
@@ -133,7 +144,7 @@ export function MissionMap() {
                   {mission.ministry && mission.ministry !== missionName(mission) && (
                     <span className="missions-item-ministry">{mission.ministry}</span>
                   )}
-                  <span className="missions-item-place">{mission.address}</span>
+                  <span className="missions-item-place">{localizePlace(mission.address, m.missions.countries)}</span>
                 </button>
               </li>
             ))}
@@ -144,8 +155,8 @@ export function MissionMap() {
               {active.ministry && active.ministry !== missionName(active) && (
                 <p>{active.ministry}</p>
               )}
-              {active.spouse && <p>With {active.spouse}</p>}
-              <p>{active.address}</p>
+              {active.spouse && <p>{fill(m.missions.withSpouse, { name: active.spouse })}</p>}
+              <p>{localizePlace(active.address, m.missions.countries)}</p>
               {active.phone && (
                 <p>
                   <a href={`tel:${active.phone.replace(/\D/g, '')}`}>{active.phone}</a>
