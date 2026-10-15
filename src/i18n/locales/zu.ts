@@ -63,10 +63,10 @@ export const zu: Messages = {
   give: {
     label: 'Izishumi neminikelo',
     title: 'Izindlela zokunikela',
-    teaser: 'Unganikela ngesishumi noma umnikelo nge-Zelle, noma ngemvulophu yomnikelo webandla ngeSonto.',
+    teaser: 'Unganikela ngesishumi noma umnikelo nge-Zelle, noma ngemvilophu yomnikelo webandla ngeSonto.',
     how: 'Indlela yokunikela',
     intro:
-      'Ukunikela kwakho kusekela ukukhonza, imishini, nomsebenzi we-Pillar of Faith Baptist Church. Izishumi neminikelo kungathunyelwa nge-Zelle noma kuletshwe ngemvulophu yomnikelo webandla.',
+      'Ukunikela kwakho kusekela ukukhonza, imishini, nomsebenzi we-Pillar of Faith Baptist Church. Izishumi neminikelo kungathunyelwa nge-Zelle noma kuletshwe ngemvilophu yomnikelo webandla.',
     zelleLabel: 'Zelle',
     zelleTitle: 'Thumela isipho',
     zelleBody:
@@ -74,8 +74,8 @@ export const zu: Messages = {
     copy: 'Kopisha ikheli',
     copied: 'Kukopishiwe',
     envelopeLabel: 'Ngokubonana',
-    envelopeTitle: 'Imvulophu yomnikelo',
-    envelopeBody: 'Faka isishumi sakho noma umnikelo emvulophini yomnikelo webandla uwunikele ngesikhathi senkonzo yeSonto.',
+    envelopeTitle: 'Imvilophu yomnikelo',
+    envelopeBody: 'Faka isishumi sakho noma umnikelo emvilophini yomnikelo webandla uwunikele ngesikhathi senkonzo yeSonto.',
   },
   about: {
     label: 'Singobani',
@@ -119,7 +119,7 @@ export const zu: Messages = {
   faith: {
     label: 'Esikukholwayo',
     title: 'Isitatimende sokukholwa',
-    lead: 'Singibandla elikholwa iBhayibheli ngempela nangokuphelele, elizinikele ekushumayeleni sonke iseluleko sikaNkulunkulu.',
+    lead: 'Siyibandla elikholwa iBhayibheli ngempela nangokuphelele, elizinikele ekushumayeleni sonke iseluleko sikaNkulunkulu.',
     read: 'Funda isitatimende',
     points: [
       {
@@ -269,7 +269,7 @@ export const zu: Messages = {
     bios: [
       'Ungumsebenzi othembekile weNkosi, owaphothula izifundo zakhe e-Pensacola Christian College, eFlorida, lapho uNkulunkulu amhlomisa khona wamlungiselela injongo yakhe. NgoFebhruwari 2026, iNkosi yamthwesa umsebenzi ongcwele wokukhonza njengomfundisi we-Pillar of Faith Baptist Church eNaperville, ehola ibandla layo ngokuzithoba, ngothando, nangokukholwa okungantengantengi. Kanye nonkosikazi wakhe othembekile Shekinah, isipho esiyigugu esivela kuNkulunkulu, ubusisekile ngamadodakazi amabili amahle, Kara no-Emi.',
       'UMfundisi Brad Blissett ukhonza i-Pillar of Faith Baptist Church njengoMfundisi Osizayo.',
-      'UMfundisi Ruel Akut ukhonza njengoMfundisi Osizayo e-Pillar of Faith Baptist Church. Yena nonkosikazi wakhe, Jocelyn, basayinxenye ethandekayo yalo mndeni webandla.',
+      'UMfundisi Ruel Akut ukhonza njengoMfundisi Osizayo e-Pillar of Faith Baptist Church. Yena nonkosikazi wakhe, Jocelyn, basaqhubeka beyingxenye ethandekayo yalo mndeni webandla.',
     ],
   },
   history: {

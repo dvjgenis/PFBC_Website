@@ -173,9 +173,9 @@ export const yo: Messages = {
     title: 'Àwùjọ wa',
     body: 'Láti ìjọsìn dé ìtẹ̀síwájú, láti àwọn ọmọdé dé àwọn àgbàlagbà — àti àwọn òjíṣẹ́ tí a ń rán tí a sì ń tì lẹ́yìn. Báyìí ni ìgbésí ayé ní PFBC rí.',
     items: [
-      { title: 'Ìpéjọpọ̀ Ọjọ́ Àìkú', text: 'A ń péjọ lójoojúmọ́ Olúwa láti jọ́sìn, láti gbàdúrà, àti láti gbọ́ Ọ̀rọ̀ tí a ń wàásù.' },
+      { title: 'Ìpéjọpọ̀ Ọjọ́ Àìkú', text: 'A ń péjọ ní Ọjọ́ Olúwa kọ̀ọ̀kan láti jọ́sìn, láti gbàdúrà, àti láti gbọ́ Ọ̀rọ̀ tí a ń wàásù.' },
       { title: 'Àwọn ọmọdé àti àwọn ọ̀dọ́', text: 'Láti VBS dé Ilé-ẹ̀kọ́ Ọjọ́ Àìkú — a ń fi ìran olùgbàgbọ́ tó ń bọ̀ sínú iṣẹ́.' },
-      { title: 'Iṣẹ́ orin', text: 'Ohùn àti ohun èlò ń gbé ìyìn ga — àkókò pàtàkì àti lójoojúmọ́ Àìkú.' },
+      { title: 'Iṣẹ́ orin', text: 'Ohùn àti ohun èlò ń gbé ìyìn ga — àkókò pàtàkì àti ní Ọjọ́ Àìkú kọ̀ọ̀kan.' },
       { title: 'Ìtẹ̀síwájú', text: 'A ń sin àwọn aládùúgbò wa ní àwọn ilé àgbàlagbà àti ní àwùjọ tó wà ní ẹ̀yìn ògiri wa.' },
       { title: 'Ìdàpọ̀', text: 'Oúnjẹ, àjọ̀dún, àti ìgbésí ayé papọ̀ — nítorí ìjọ jẹ́ ẹbí.' },
       { title: 'Àwùjọ', text: 'Ọ̀pọ̀ ìran, ọ̀pọ̀ àṣà, tí ó sì ń gba àlejò nígbà gbogbo.' },
@@ -185,7 +185,7 @@ export const yo: Messages = {
     label: 'Ọ̀rọ̀ Ọlọ́run',
     title: 'Ṣí Bíbélì',
     intro:
-      'New King James Version, ní Gẹ̀ẹ́sì. Gbogbo ìwé mẹ́rìndínlọ́gọ́rin Bíbélì àwọn Pùròtẹ́sítáǹtì. Yí i láti etí, láti àwọn ọfà, tàbí láti bọ́tìnì.',
+      'New King James Version, ní Gẹ̀ẹ́sì. Gbogbo ìwé mẹ́fà lé ọgọ́ta Bíbélì àwọn Pùròtẹ́sítáǹtì. Yí i láti etí, láti àwọn ọfà, tàbí láti bọ́tìnì.',
     old: 'Májẹ̀mú Láéláé',
     new: 'Májẹ̀mú Tuntun',
     book: 'Yan ìwé',
@@ -202,7 +202,7 @@ export const yo: Messages = {
   prayer: {
     label: 'Àkókò ìdákẹ́jẹ́ẹ́',
     title: 'Kí ni ká gbàdúrà fún yín lónìí?',
-    body: 'Yan àkọsílẹ̀ kan, tàbí kọ tiyín. Àwọn àkọsílẹ̀ wà ní gbangba — gbogbo ẹni tó bá wá ojú-ìwé yìí lè rí wọn. Àádọ́ta méjì lè dúró lórí ògiri fún ọjọ́ kan, lẹ́yìn náà wọ́n á parẹ́.',
+    body: 'Yan àkọsílẹ̀ kan, tàbí kọ tiyín. Àwọn àkọsílẹ̀ wà ní gbangba — gbogbo ẹni tó bá wá ojú-ìwé yìí lè rí wọn. Àwọn tí kò ju ogún lọ lè dúró lórí ògiri fún ọjọ́ kan, lẹ́yìn náà wọ́n á parẹ́.',
     write: 'Kọ àkọsílẹ̀',
     yourNote: 'Àkọsílẹ̀ yín',
     placeholder: 'Àdúrà kúkúrú…',
