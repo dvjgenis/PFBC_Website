@@ -18,6 +18,7 @@ export const LANGUAGES = [
   { id: 'bcl', label: 'Bikol', html: 'bcl', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
   { id: 'pam', label: 'Kapampangan', html: 'pam', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
   { id: 'pag', label: 'Pangasinan', html: 'pag', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
+  { id: 'cbk', label: 'Chavacano', html: 'cbk', dir: 'ltr', flag: '🇵🇭', group: 'filipino' },
   { id: 'es', label: 'Spanish', html: 'es', dir: 'ltr', flag: '🇪🇸', group: 'european' },
   { id: 'pt', label: 'Portuguese', html: 'pt-BR', dir: 'ltr', flag: '🇧🇷', group: 'european' },
   { id: 'pl', label: 'Polish', html: 'pl', dir: 'ltr', flag: '🇵🇱', group: 'european' },

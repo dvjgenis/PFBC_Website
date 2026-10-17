@@ -1,5 +1,6 @@
 export { ar } from './ar'
 export { bcl } from './bcl'
+export { cbk } from './cbk'
 export { de } from './de'
 export { fa } from './fa'
 export { fr } from './fr'
