@@ -6,6 +6,7 @@ import { he } from './history/he'
 import { sg } from './history/sg'
 import { hi, ml, pa, ta, te, ur } from './history/indic'
 import { bcl, cbk, pag, pam, war } from './history/ph'
+import { ibl, ivv, krj, sgd, tsg, xsb } from './history/more-ph'
 import type { LangId } from './types'
 
 export type EventCopy = { date: string; text: string }
@@ -606,7 +607,7 @@ const es: EventCopy[] = [
 ]
 
 const BY_LANG: Partial<Record<LangId, EventCopy[]>> = {
-  tl, ceb, hil, ilo, war, bcl, pam, pag, cbk, es,
+  tl, ceb, hil, ilo, war, bcl, pam, pag, cbk, tsg, ivv, ibl, xsb, sgd, krj, es,
   pt, pl, fr, it, de,
   zh, ko, ja,
   id, ms, sg,

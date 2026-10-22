@@ -1,5 +1,5 @@
 import {
-  ar, bcl, cbk, de, fa, fr, ha, he, hi, id, it, ja, ko, lg, ml, ms, pa, pag, pam, pl, pt, sg, sw, ta, te, ur, war, yo, zh, zu,
+  ar, bcl, cbk, de, fa, fr, ha, he, hi, ibl, id, it, ivv, ja, ko, krj, lg, ml, ms, pa, pag, pam, pl, pt, sg, sgd, sw, ta, te, tsg, ur, war, xsb, yo, zh, zu,
 } from './locales'
 import type { LangId, Messages } from './types'
 
@@ -1769,7 +1769,7 @@ const es: Messages = {
 }
 
 export const MESSAGES: Record<LangId, Messages> = {
-  en, tl, ceb, hil, ilo, war, bcl, pam, pag, cbk, es,
+  en, tl, ceb, hil, ilo, war, bcl, pam, pag, cbk, tsg, ivv, ibl, xsb, sgd, krj, es,
   pt, pl, fr, it, de,
   zh, ko, ja,
   id, ms, sg,
