@@ -74,10 +74,11 @@ export type Leader = {
 export const ASSISTING_PASTORS: Leader[] = [
   {
     name: 'Pastor Brad Blissett',
+    spouse: 'Barb Blissett',
     title: 'Assisting Pastor',
-    photo: '/photos/DSC01439.JPG',
-    photoAlt: 'Pastor Brad Blissett serving at the pulpit',
-    photoPosition: 'center 30%',
+    photo: '/photos/pastor-brad-barb.jpg',
+    photoAlt: 'Pastor Brad Blissett and Barb Blissett standing together',
+    photoPosition: 'center 40%',
     bio: 'Pastor Brad Blissett serves Pillar of Faith Baptist Church as Assisting Pastor.',
   },
   {

@@ -270,7 +270,7 @@ const en: Messages = {
     roles: { 'Lead Pastor': 'Lead Pastor', 'Assisting Pastor': 'Assisting Pastor' },
     bios: [
       'He is a faithful servant of the Lord, a graduate of Pensacola Christian College, Florida where he was equipped and prepared by God for His purpose. In February 2026, the Lord entrusted him with the sacred calling to serve as the pastor of Pillar of Faith Baptist Church in Naperville, leading His congregation with humility, love, and unwavering faith. Alongside his devoted wife Shekinah, a precious gift from God, he is blessed with two beautiful daughters, Kara and Emi.',
-      'Pastor Brad Blissett serves Pillar of Faith Baptist Church as Assisting Pastor.',
+      'Pastor Brad Blissett serves Pillar of Faith Baptist Church as Assisting Pastor. He and his wife, Barb, remain a beloved part of this church family.',
       'Pastor Ruel Akut serves as Assisting Pastor at Pillar of Faith Baptist Church. He and his wife, Jocelyn, remain a beloved part of this church family.',
     ],
   },
