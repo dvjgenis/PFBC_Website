@@ -22,7 +22,10 @@ function LeaderCard({ leader, role, bio }: { leader: Leader; role: string; bio: 
           <img
             src={leader.photo}
             alt={leader.photoAlt ?? leader.name}
-            style={leader.photoPosition ? { objectPosition: leader.photoPosition } : undefined}
+            style={{
+              ...(leader.photoAspectRatio ? { aspectRatio: leader.photoAspectRatio } : {}),
+              ...(leader.photoPosition ? { objectPosition: leader.photoPosition } : {}),
+            }}
           />
         ) : (
           <div className="leader-photo-empty" aria-hidden="true">

@@ -68,6 +68,7 @@ export type Leader = {
   photo?: string
   photoAlt?: string
   photoPosition?: string
+  photoAspectRatio?: string
   bio: string
 }
 
@@ -78,7 +79,8 @@ export const ASSISTING_PASTORS: Leader[] = [
     title: 'Assisting Pastor',
     photo: '/photos/pastor-brad-barb.jpg',
     photoAlt: 'Pastor Brad Blissett and Barb Blissett standing together',
-    photoPosition: 'center 40%',
+    photoAspectRatio: '1 / 1',
+    photoPosition: 'center center',
     bio: 'Pastor Brad Blissett serves Pillar of Faith Baptist Church as Assisting Pastor.',
   },
   {
