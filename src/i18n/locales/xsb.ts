@@ -203,7 +203,7 @@ export const xsb: Messages = {
   prayer: {
     label: 'Asa a matahimik a tiempo',
     title: 'Anya yay paagi mi a magpangadi para konmoyo saya?',
-    body: 'Pilion yay nota, o isulat yay moyo. Pampubliko yay mga nota — katantang magbisita sini a pahina makakita. Tubtub beinte yay magpabilin ha dinding ha asa a awlo, dayon madula.',
+    body: 'Pilion yay nota, o isulat yay moyo. Pampubliko yay mga nota — katantang magbisita sini a pahina makakita. Tubtub beinte yay magpabilin ha dinding ha asa a semana, dayon madula.',
     write: 'Isulat yay nota',
     yourNote: 'Nota moyo',
     placeholder: 'Asa a makuyad a pangadi…',

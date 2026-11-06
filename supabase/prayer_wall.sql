@@ -16,7 +16,7 @@ create index if not exists prayer_stickers_created_at_idx
 
 alter table public.prayer_stickers enable row level security;
 
--- Anyone can read notes (app filters to last 24h).
+-- Anyone can read notes (app filters to last 7 days).
 create policy "prayer_stickers_select_anon"
   on public.prayer_stickers
   for select

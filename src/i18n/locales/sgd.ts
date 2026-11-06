@@ -203,7 +203,7 @@ export const sgd: Messages = {
   prayer: {
     label: 'Usa ka hilom na gutlo',
     title: 'Pauno namo pag-ampo para kaniyo karon?',
-    body: 'Pagpili nan nota, o isulat an inyo. Pampubliko an mga nota — tanan magbisita sini na pahina makakita. Hangtod beinte an magpabilin sa dingding sulod nan usa ka adlaw, unya mawala.',
+    body: 'Pagpili nan nota, o isulat an inyo. Pampubliko an mga nota — tanan magbisita sini na pahina makakita. Hangtod beinte an magpabilin sa dingding sulod nan usa ka semana, unya mawala.',
     write: 'Isulat an nota',
     yourNote: 'Nota ninyo',
     placeholder: 'Usa ka mubo na pag-ampo…',

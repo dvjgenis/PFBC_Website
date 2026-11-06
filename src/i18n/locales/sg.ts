@@ -201,7 +201,7 @@ export const sg: Messages = {
   prayer: {
     label: 'A quiet moment',
     title: 'Today, how can we pray for you?',
-    body: 'Choose a note, or write your own. Notes are public hor — whoever visit this page can see them. Up to twenty stay on the wall for one day, then they fade.',
+    body: 'Choose a note, or write your own. Notes are public hor — whoever visit this page can see them. Up to twenty stay on the wall for one week, then they fade.',
     write: 'Write a note',
     yourNote: 'Your note',
     placeholder: 'A short prayer…',

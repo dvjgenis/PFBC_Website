@@ -201,7 +201,7 @@ export const war: Messages = {
   prayer: {
     label: 'Usa nga hilom nga higayon',
     title: 'Ano an amon maihapara ha imo yana?',
-    body: 'Pili hin nota, o sulat han imo kalugaringon. Publiko an mga nota — an ngatanan nga bumibisita hini nga panid makakakita hini. Hangtod ha karuhaan an nabibilin ha bungbong hin usa ka adlaw, tapos nawawara.',
+    body: 'Pili hin nota, o sulat han imo kalugaringon. Publiko an mga nota — an ngatanan nga bumibisita hini nga panid makakakita hini. Hangtod ha karuhaan an nabibilin ha bungbong hin usa ka semana, tapos nawawara.',
     write: 'Sulat hin nota',
     yourNote: 'Imo nota',
     placeholder: 'Usa nga mubo nga panalangin…',

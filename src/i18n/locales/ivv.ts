@@ -203,7 +203,7 @@ export const ivv: Messages = {
   prayer: {
     label: 'Asa a mahipos a tiempo',
     title: 'Angu u paagi namen a maypangadyi para kaniyo saya?',
-    body: 'Pilien u nota, ono isulat u inyo. Pampubliko u mga nota — katantang maybisita sini a pahina makakita. Tubtub beinte u maypabilin du dinding du asa a araw, dayon madula.',
+    body: 'Pilien u nota, ono isulat u inyo. Pampubliko u mga nota — katantang maybisita sini a pahina makakita. Tubtub beinte u maypabilin du dinding du asa a simana, dayon madula.',
     write: 'Isulat u nota',
     yourNote: 'Nota ninyo',
     placeholder: 'Asa a mapteng a pangadyi…',

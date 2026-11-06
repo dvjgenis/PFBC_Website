@@ -201,7 +201,7 @@ export const bcl: Messages = {
   prayer: {
     label: 'Sarong tahimik na panahon',
     title: 'Ano an samong maipamibi para saindo ngunyan?',
-    body: 'Magpili nin nota, o isurat an saimo. Pampubliko an mga nota — an gabos na nagbibisita kaining pahina mahihiling sinda. Sagkod beinte an nagdadanay sa lanob nin sarong aldaw, dangan nawawara.',
+    body: 'Magpili nin nota, o isurat an saimo. Pampubliko an mga nota — an gabos na nagbibisita kaining pahina mahihiling sinda. Sagkod beinte an nagdadanay sa lanob nin sarong semana, dangan nawawara.',
     write: 'Isurat an nota',
     yourNote: 'Nota mo',
     placeholder: 'Sarong halipot na pamibi…',

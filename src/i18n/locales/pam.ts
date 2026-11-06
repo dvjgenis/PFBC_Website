@@ -201,7 +201,7 @@ export const pam: Messages = {
   prayer: {
     label: 'Metung a matahimik a oras',
     title: 'Sanu ing malyari ming ipanalangin para kekayu ngeni?',
-    body: 'Mamili kayung nota, o isulat yu ing kekayu. Pampubliku la reng nota — eganagana nong bibista king pahinang ini akakit do. Angga king aduang pulu la reng manatili king dingding na metung a aldo, kaibat mawawala.',
+    body: 'Mamili kayung nota, o isulat yu ing kekayu. Pampubliku la reng nota — eganagana nong bibista king pahinang ini akakit do. Angga king aduang pulu la reng manatili king dingding na metung a lawas, kaibat mawawala.',
     write: 'Isulat ing nota',
     yourNote: 'Nota yu',
     placeholder: 'Metung a makuyad a panalangin…',

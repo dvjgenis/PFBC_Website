@@ -16,7 +16,7 @@ export type PrayerTone = PrayerTopic['tone'] | 'lilac'
 
 export const CUSTOM_LIMIT = 50
 export const MAX_STICKERS = 20
-export const TTL_MS = 24 * 60 * 60 * 1000
+export const TTL_MS = 7 * 24 * 60 * 60 * 1000
 
 export interface PrayerSticker {
   id: string

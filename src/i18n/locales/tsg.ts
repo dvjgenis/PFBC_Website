@@ -203,7 +203,7 @@ export const tsg: Messages = {
   prayer: {
     label: 'Hambuuk waktu mamanahun',
     title: 'Biyariin kami mangadyi pasal niyu bihaun?',
-    body: 'Pila in nota, atawa sulat in kaymu. Awn ha katantang in mga nota — katantang magbisita sin pahina ini maka-kita. Sampay kawhaan in maka-ingat ha dinding ha hambuuk adlaw, ampa malawa.',
+    body: 'Pila in nota, atawa sulat in kaymu. Awn ha katantang in mga nota — katantang magbisita sin pahina ini maka-kita. Sampay kawhaan in maka-ingat ha dinding ha hambuuk simana, ampa malawa.',
     write: 'Sulat in nota',
     yourNote: 'Nota niyu',
     placeholder: 'Hambuuk hapun pangadyi…',

@@ -203,7 +203,7 @@ export const cbk: Messages = {
   prayer: {
     label: 'Un momento quieto',
     title: '¿Cómo kame puede ora para con uste hoy?',
-    body: 'Escoje un nota, o escribi el de uste. Público el maga nota — todo el que ta visita este página puede mira con sila. Hasta veinte ta queda na pared por un día, luego ta desvanece.',
+    body: 'Escoje un nota, o escribi el de uste. Público el maga nota — todo el que ta visita este página puede mira con sila. Hasta veinte ta queda na pared por una semana, luego ta desvanece.',
     write: 'Escribi un nota',
     yourNote: 'El nota de uste',
     placeholder: 'Un corto oración…',

@@ -203,7 +203,7 @@ export const krj: Messages = {
   prayer: {
     label: 'Isa ka mahipos nga tion',
     title: 'Paano kami magpangamuyo para kaniyo subong?',
-    body: 'Pilia ang nota, ukon isulat ang inyo. Pampubliko ang mga nota — tanan nga magbisita sini nga pahina makakita. Tubtob beinte ang magpabilin sa dingding sa isa ka adlaw, dayon madula.',
+    body: 'Pilia ang nota, ukon isulat ang inyo. Pampubliko ang mga nota — tanan nga magbisita sini nga pahina makakita. Tubtob beinte ang magpabilin sa dingding sa isa ka semana, dayon madula.',
     write: 'Isulat ang nota',
     yourNote: 'Nota ninyo',
     placeholder: 'Isa ka malip-ot nga pangamuyo…',
